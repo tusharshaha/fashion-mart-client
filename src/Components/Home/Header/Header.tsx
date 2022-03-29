@@ -3,10 +3,10 @@ import {Carousel} from 'react-bootstrap'
 import './Header.css';
 const Header: React.FC = () => {
     return (
-        <Carousel>
+        <Carousel interval={null}>
             <Carousel.Item>
                 <div className='slider1'>
-        
+
                 </div>
             </Carousel.Item>
             <Carousel.Item>

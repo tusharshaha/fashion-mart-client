@@ -1,0 +1,61 @@
+.slider1{
+    background-image: url('../../../assets/images/slider1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 675px;
+}
+.slider2{
+    background-image: url('../../../assets/images/slider2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 675px;
+}
+.carousel-control-prev-icon{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-image: none;
+    position: relative;
+    transition: 0.3s;
+}
+.carousel-control-prev:hover .carousel-control-prev-icon{
+    background-color: rgba(255, 0, 0, 0.797);
+}
+.carousel-control-prev-icon::after{
+    content: '<';
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 10px);
+    font-size: 35px;
+}
+.carousel-control-next-icon{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-image: none;
+    position: relative;
+    transition: 0.3s;
+}
+.carousel-control-next:hover .carousel-control-next-icon{
+    background-color: rgba(255, 0, 0, 0.797);
+}
+.carousel-control-next-icon::after{
+    content: '>';
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 10px);
+    font-size: 35px;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.carousel-indicators .active{
+    background-color: red;
+}

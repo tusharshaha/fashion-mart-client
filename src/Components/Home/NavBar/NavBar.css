@@ -1,0 +1,39 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    padding: 30px 0;
+    width: 100vw;
+}
+.nav_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav_menu{
+    display: flex;
+    gap: 40px;
+}
+.nav_list{
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    gap: 25px;
+}
+.nav_icons{
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    gap: 25px;
+}
+.nav_icons li{
+    list-style: none;
+    font-size: 22px;
+}
+.nav_list li{
+    list-style: none;
+}
+.nav_list li a{
+    text-decoration: none;
+    text-transform: uppercase;
+}

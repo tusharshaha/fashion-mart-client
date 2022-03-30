@@ -11,7 +11,7 @@ const NavBar: React.FC = () => {
             <Container>
                 <div className="nav_container">
                     <div className='nav_menu'>
-                        <h3>Fashion Mart</h3>
+                        <h3 className='logo'>Fashion Mart</h3>
                         <ul className='nav_list'>
                             <li>
                                 <Link to="/home">Home</Link>

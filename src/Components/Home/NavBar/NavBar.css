@@ -28,6 +28,11 @@
     align-items: center;
     gap: 25px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.logo{
+    font-family: 'Lobster', cursive;
+    font-size: 32px;
+}
 .nav_icons li{
     list-style: none;
     font-size: 22px;
@@ -49,6 +54,14 @@
     background-color: #fff;
     transition: 0.3s;
 }
+.nav_list li a:focus::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
 .nav_list li a:hover::after{
     width: 100%;
 }

@@ -1,0 +1,10 @@
+.cat_img{
+    overflow: hidden;
+}
+.cat_img img{
+    width: 100%;
+    transition: all 0.4s;
+}
+.cat_img:hover img{
+    transform: scale(1.1);
+}

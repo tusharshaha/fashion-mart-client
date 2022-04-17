@@ -1,0 +1,32 @@
+.swiper-button-prev::after {
+    content: "";
+}
+
+.swiper-button-prev:hover::after {
+    content: 'prev';
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.swiper-button-next::after {
+    content: "";
+}
+
+.swiper-button-next:hover::after {
+    content: 'next';
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: red;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0;
+}

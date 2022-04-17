@@ -1,6 +1,28 @@
-.App{
+.App {
     overflow: hidden;
 }
-.pointer:hover{
+
+.pointer:hover {
     cursor: pointer;
+}
+
+.active_btn {
+    border: none;
+    background-color: #ff4545;
+    color: white;
+    font-weight: 500;
+    padding: 4px 15px;
+    border-radius: 15px;
+}
+.disable_cat_btn{
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    padding: 4px 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.disable_cat_btn:hover {
+    background-color: #ff4545;
+    color: white;
 }

@@ -2,7 +2,6 @@
 .navbar{
     position: fixed;
     top: 0;
-    padding: 20px 0;
     width: 100vw;
     z-index: 10;
     color: #fff;

@@ -17,8 +17,8 @@ const ShortDetails: React.FC = () => {
         { icon: <AiOutlineGift />, title: 'MEMBER DISCOUNT', subTitle: 'Onevery order over $120.00' }
     ]
     return (
-        <div className='my-5 border '>
-            <div className='py-5 px-4'>
+        <div className='my-5 border'>
+            <Container className='py-5'>
                 <Row xs={1} md={2} lg={4} className="g-4 mx-auto">
                     {
                         stDetails.map((dt, i) => <Col key={i}>
@@ -34,7 +34,7 @@ const ShortDetails: React.FC = () => {
                         </Col>)
                     }
                 </Row>
-            </div>
+            </Container>
         </div>
     );
 };

@@ -19,6 +19,7 @@ const NavBar: React.FC = () => {
     return (
         <div style={{
             backgroundColor: color ? '#ffffffe6' : 'transparent',
+            padding: color ? "10px 0" : "20px 0",
             color: color ? "black" : "white",
             transition: 'all 0.4s'
         }} className='navbar'>

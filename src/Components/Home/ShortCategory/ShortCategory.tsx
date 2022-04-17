@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import cat1 from '../../../assets/images/category5.png';
 import cat2 from '../../../assets/images/category6.png';
 import cat3 from '../../../assets/images/category7.png';
@@ -29,7 +30,7 @@ const ShortCategory: React.FC = () => {
                         <h4 className="text-uppercase fw-light mt-3">{cat.title}</h4>
                         <div className='d-flex align-items-center justify-content-between fw-light'>
                             <span>13 Products</span>
-                            <span>+ Shop Collections</span>
+                            <Link to="/shop" className='text-dark'>+ Shop Collections</Link>
                         </div>
                     </Col>)
                 }

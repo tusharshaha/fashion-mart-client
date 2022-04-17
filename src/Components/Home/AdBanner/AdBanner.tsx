@@ -7,7 +7,7 @@ import adBanner2 from '../../../assets/images/banner11.png';
 const AdBanner: React.FC = () => {
     return (
         <Container className="pb-5">
-            <Row md={1} lg={2} className="g-5">
+            <Row sm={1} lg={2} className="g-5">
                 <Col data-aos="fade-right">
                     <div>
                         <div className='cat_img mb-4'>

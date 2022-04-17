@@ -19,7 +19,7 @@ const ShortDetails: React.FC = () => {
     return (
         <div className='my-5 border'>
             <Container className='py-5'>
-                <Row xs={1} md={2} lg={4} className="g-4 mx-auto">
+                <Row sm={2} lg={4} className="g-4 mx-auto">
                     {
                         stDetails.map((dt, i) => <Col key={i}>
                             <div className='d-flex'>

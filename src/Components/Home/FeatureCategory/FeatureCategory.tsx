@@ -21,7 +21,7 @@ const ShortCategory: React.FC = () => {
     ]
     return (
         <Container className="py-5">
-            <Row xs={1} md={2} lg={4} className='g-3'>
+            <Row sm={1} md={2} lg={4} className='g-3'>
                 {
                     categories.map((cat, i) => <Col key={i}>
                         <div className='cat_img'>

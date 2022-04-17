@@ -33,7 +33,7 @@ const ReviewBrands: React.FC = () => {
     return (
         <div style={{ backgroundColor: "#f7f7f7" }} className='py-5'>
             <Container className='py-3'>
-                <Row xs={1} md={1} lg={2} className="g-4 d-flex align-items-center">
+                <Row sm={1} md={1} lg={2} className="g-4 d-flex align-items-center">
                     <Col>
                         <Swiper slidesPerView={1} slidesPerGroup={1} loop={true} loopFillGroupWithBlank={true} autoplay={{
                             delay: 2500,
@@ -58,7 +58,7 @@ const ReviewBrands: React.FC = () => {
                         </Swiper>
                     </Col>
                     <Col>
-                        <Row xs={3} className="g-5">
+                        <Row sm={3} className="g-5">
                             {brands.map((ele, i) => <Col key={i}>
                                 <div>
                                     <img src={ele} alt="" />

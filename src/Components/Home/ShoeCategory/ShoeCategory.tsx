@@ -20,7 +20,7 @@ const ShoeCategory = () => {
                     }
                 </div>
             </div>
-            <Row xs={1} md={2} lg={4} className="g-3">
+            <Row sm={1} md={2} lg={4} className="g-3">
                 <Col></Col>
             </Row>
         </Container>

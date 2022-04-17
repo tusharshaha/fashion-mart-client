@@ -5,7 +5,7 @@ import cat1 from '../../../assets/images/category5.png';
 import cat2 from '../../../assets/images/category6.png';
 import cat3 from '../../../assets/images/category7.png';
 import cat4 from '../../../assets/images/category8.png';
-import './ShortCategory.css';
+import './FeatureCategory.css';
 
 interface category {
     img: string,

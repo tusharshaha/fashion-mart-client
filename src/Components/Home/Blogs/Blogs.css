@@ -1,0 +1,23 @@
+.post_date{
+    width: 80px;
+    height: 80px;
+    background-color: #ff4545;
+    color: white;
+    padding: 25px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.post_date h3{
+    margin-bottom: 0px;
+}
+.post_date h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+}

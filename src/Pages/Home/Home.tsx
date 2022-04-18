@@ -9,6 +9,7 @@ import ShoeAd from '../../Components/Home/ShoeAd/ShoeAd';
 import ShoeCategory from '../../Components/Home/ShoeCategory/ShoeCategory';
 import ReviewBrands from '../../Components/Home/ReviewBrands/ReviewBrands';
 import DiscountBanner from '../../Components/Home/DiscountBanner/DiscountBanner';
+import Blogs from '../../Components/Home/Blogs/Blogs';
 
 
 const Home : React.FC = () => {
@@ -24,6 +25,7 @@ const Home : React.FC = () => {
             <ShoeCategory></ShoeCategory>
             <ReviewBrands></ReviewBrands>
             <DiscountBanner></DiscountBanner>
+            <Blogs></Blogs>
         </>
     );
 };

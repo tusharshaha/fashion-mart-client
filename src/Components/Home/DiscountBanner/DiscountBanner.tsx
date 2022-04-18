@@ -4,7 +4,7 @@ import "./DiscountBanner.css";
 
 const DiscountBanner: React.FC = () => {
     return (
-        <div className='banner_wrapper'>
+        <div className='banner_wrapper mb-5'>
             <div className='discount_banner'>
                 <Container>
                     <div className='banner_text'>

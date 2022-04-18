@@ -19,10 +19,10 @@ const ShortDetails: React.FC = () => {
     return (
         <div className='my-5 border'>
             <Container className='py-5'>
-                <Row sm={2} lg={4} className="g-4 mx-auto">
+                <Row xs={1} sm={2} lg={4} className="g-4 mx-auto">
                     {
                         stDetails.map((dt, i) => <Col key={i}>
-                            <div className='d-flex'>
+                            <div className='d-flex justify-content-center'>
                                 <div className="details_icon">
                                     {dt.icon}
                                 </div>

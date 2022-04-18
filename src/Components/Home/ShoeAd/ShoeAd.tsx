@@ -19,7 +19,7 @@ const ShoeAd: React.FC = () => {
     const navigate = useNavigate();
     return (
         <Container className="py-5">
-            <Row sm={1} md={1} lg={3} className="g-3">
+            <Row xs={1} md={1} lg={3} className="g-3">
                 {
                     banners.map((ele, i) => <Col key={i}>
                         <div

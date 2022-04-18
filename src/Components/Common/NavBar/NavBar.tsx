@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { BsSearch } from 'react-icons/bs';
 import { FaOpencart, FaRegUserCircle } from 'react-icons/fa';
+import { FiMenu } from "react-icons/fi";
 import './NavBar.css';
 
 const NavBar: React.FC = () => {
@@ -52,6 +53,7 @@ const NavBar: React.FC = () => {
                             <li><FaRegUserCircle /></li>
                         </ul>
                     </div>
+                    <Button variant="secondary" className="toggle_btn"><FiMenu /></Button>
                 </div>
             </Container >
         </div >

@@ -23,7 +23,7 @@ const Blogs: React.FC = () => {
                 <h2 className='text-uppercase title_mark'>Latest Blogs</h2>
                 <p className='text-decoration-underline fw-bold'>VIEW ALL POSTS</p>
             </div>
-            <Row sm={1} lg={3} className="g-3 mt-4">
+            <Row xs={1} lg={3} className="g-3 mt-4">
                 {
                     blogs.map((ele, i) => <Col
                         key={i}

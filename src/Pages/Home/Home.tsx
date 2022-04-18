@@ -2,7 +2,7 @@ import React from 'react';
 import AdBanner from '../../Components/Home/AdBanner/AdBanner';
 import FeatureShoes from '../../Components/Home/FeatureShoes/FeatureShoes';
 import Header from '../../Components/Home/Header/Header';
-import NavBar from '../../Components/Home/NavBar/NavBar';
+import NavBar from '../../Components/Common/NavBar/NavBar';
 import ShortCategory from '../../Components/Home/FeatureCategory/FeatureCategory';
 import ShortDetails from '../../Components/Home/ShortDetails/ShortDetails';
 import ShoeAd from '../../Components/Home/ShoeAd/ShoeAd';
@@ -10,6 +10,7 @@ import ShoeCategory from '../../Components/Home/ShoeCategory/ShoeCategory';
 import ReviewBrands from '../../Components/Home/ReviewBrands/ReviewBrands';
 import DiscountBanner from '../../Components/Home/DiscountBanner/DiscountBanner';
 import Blogs from '../../Components/Home/Blogs/Blogs';
+import Footer from '../../Components/Common/Footer/Footer';
 
 
 const Home : React.FC = () => {
@@ -26,6 +27,7 @@ const Home : React.FC = () => {
             <ReviewBrands></ReviewBrands>
             <DiscountBanner></DiscountBanner>
             <Blogs></Blogs>
+            <Footer></Footer>
         </>
     );
 };

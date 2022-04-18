@@ -8,6 +8,7 @@ import ShortDetails from '../../Components/Home/ShortDetails/ShortDetails';
 import ShoeAd from '../../Components/Home/ShoeAd/ShoeAd';
 import ShoeCategory from '../../Components/Home/ShoeCategory/ShoeCategory';
 import ReviewBrands from '../../Components/Home/ReviewBrands/ReviewBrands';
+import DiscountBanner from '../../Components/Home/DiscountBanner/DiscountBanner';
 
 
 const Home : React.FC = () => {
@@ -22,6 +23,7 @@ const Home : React.FC = () => {
             <ShoeAd></ShoeAd>
             <ShoeCategory></ShoeCategory>
             <ReviewBrands></ReviewBrands>
+            <DiscountBanner></DiscountBanner>
         </>
     );
 };

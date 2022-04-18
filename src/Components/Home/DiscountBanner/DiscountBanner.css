@@ -1,0 +1,33 @@
+.banner_wrapper{
+    overflow: hidden;
+    position: relative;
+}
+.discount_banner{
+    background-image: url("../../../assets/images/banner15.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    transition: 0.3s;
+}
+.shop_btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.shop_btn2:hover{
+    background-color: red;
+    color: white;
+}

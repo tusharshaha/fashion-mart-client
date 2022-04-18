@@ -7,7 +7,7 @@ import Home from './Pages/Home/Home';
 
 const App: React.FC = () => {
   useEffect(() => {
-    AOS.init({ offset: 160, duration: 900 });
+    AOS.init({ offset: 160, duration: 1200, delay: 300 });
   });
   return (
     <div className='App'>

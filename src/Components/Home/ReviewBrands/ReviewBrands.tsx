@@ -31,7 +31,7 @@ const ReviewBrands: React.FC = () => {
     ]
     const brands: string[] = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand3, brand5]
     return (
-        <div style={{ backgroundColor: "#f7f7f7" }} className='py-5'>
+        <div style={{ backgroundColor: "#f7f7f7" }} className='py-5 mt-5'>
             <Container className='py-3'>
                 <Row xs={1} md={1} lg={2} className="g-4 d-flex align-items-center">
                     <Col data-aos="fade-right" data-aos-delay="400">

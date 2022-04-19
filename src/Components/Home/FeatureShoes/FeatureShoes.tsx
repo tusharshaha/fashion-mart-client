@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useProducts } from '../../../hooks/custom_hooks';
 import "./FeaturedShoes.css";
 
 const FeaturedProduct: React.FC = () => {
+    const { products } = useProducts();
     return (
         <Container className="py-5">
             <div className='text-center'>

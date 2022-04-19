@@ -1,51 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-.navbar{
+
+.navbar {
     position: fixed;
     top: 0;
     width: 100vw;
     z-index: 10;
     color: #fff;
 }
-.nav_container{
+
+.nav_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
 }
-.nav_menu{
+
+.nav_menu {
     display: flex;
     justify-content: space-between;
 }
-.nav_list{
+
+.nav_list,
+.toggle_nav_list {
     display: flex;
     margin-bottom: 0;
     align-items: center;
     gap: 25px;
 }
-.nav_icons{
+
+.toggle_nav_list {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 55px;
+    transition: 0.3s;
+}
+
+.nav_icons,
+.toggle_nav_icons {
     display: flex;
     margin-bottom: 0;
     align-items: center;
     gap: 25px;
 }
-.logo{
+.toggle_nav_icons{
+    position: absolute;
+    top: 254px;
+    justify-content: center;
+    height: 100%;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo {
     font-family: 'Lobster', cursive;
     font-size: 32px;
 }
-.nav_icons li{
+
+.nav_icons li,
+.toggle_nav_icons li {
     list-style: none;
     font-size: 22px;
 }
-.nav_list li{
+
+.nav_list li,
+.toggle_nav_list li {
     list-style: none;
 }
-.nav_list li a{
+
+
+.nav_list li a,
+.toggle_nav_list li a {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
     font-weight: 500;
 }
-.nav_list li a::after{
+
+.nav_list li a::after,
+.toggle_nav_list li a::after {
     content: '';
     display: block;
     width: 0px;
@@ -53,21 +90,20 @@
     background-color: #fff;
     transition: 0.3s;
 }
-.nav_list li a:focus::after{
-    content: '';
-    display: block;
+
+
+.nav_list li a:hover::after,
+.nav_list li a:focus::after,
+.toggle_nav_list li a:hover::after,
+.toggle_nav_list li a:focus::after {
     width: 100%;
-    height: 2px;
-    background-color: #fff;
 }
 
-.nav_list li a:hover::after{
-    width: 100%;
-}
-.cart{
+.cart {
     position: relative;
 }
-.cart .cart_count{
+
+.cart .cart_count {
     position: absolute;
     top: -3px;
     right: -10px;
@@ -81,17 +117,20 @@
     border-radius: 50%;
     font-size: 16px;
 }
-.toggle_btn{
+
+.toggle_btn {
     display: none;
 }
+
 @media only screen and (max-width: 790px) {
-    .nav_list{
+    .nav_list {
         display: none;
     }
-    .nav_icons{
+    .nav_icons {
         display: none;
     }
-    .toggle_btn{
+
+    .toggle_btn {
         display: block;
     }
 }

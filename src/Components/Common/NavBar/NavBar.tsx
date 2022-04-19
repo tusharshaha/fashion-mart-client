@@ -9,6 +9,7 @@ import './NavBar.css';
 const NavBar: React.FC = () => {
     // change navbar color when scroll
     const [color, setColor] = useState<boolean>(false);
+    const [toggle, setToggle] = useState<boolean>(false);
     const changeColor = () => {
         if (window.scrollY >= 90) {
             setColor(true);
@@ -16,19 +17,24 @@ const NavBar: React.FC = () => {
             setColor(false)
         }
     }
+    const navbarStyle = {
+        backgroundColor: color ? '#ffffffe6' : 'transparent',
+        padding: color ? "10px 0" : "20px 0",
+        color: color ? "black" : "white",
+        transition: 'all 0.4s'
+    }
+    const navMenu = {
+        backgroundColor: !toggle ? 'transparent' : toggle && color ? "#ffffffe6" : "#0000ff3b",
+        color: color ? "black" : "white",
+    }
     window.addEventListener('scroll', changeColor);
     return (
-        <div style={{
-            backgroundColor: color ? '#ffffffe6' : 'transparent',
-            padding: color ? "10px 0" : "20px 0",
-            color: color ? "black" : "white",
-            transition: 'all 0.4s'
-        }} className='navbar'>
+        <div style={navbarStyle} className='navbar'>
             <Container>
                 <div className="nav_container">
                     <div className='nav_menu'>
                         <h3 className='logo'>Fashion Mart</h3>
-                        <ul className='nav_list'>
+                        <ul style={navMenu} className={`${toggle ? "toggle_nav_list" : "nav_list"}`}>
                             <li>
                                 <Link style={{ color: color ? "black" : "white" }} to="/home">Home</Link>
                             </li>
@@ -43,17 +49,23 @@ const NavBar: React.FC = () => {
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <ul className='nav_icons'>
-                            <li><BsSearch /></li>
-                            <li className="cart">
-                                <FaOpencart />
-                                <span className="cart_count">0</span>
-                            </li>
-                            <li><FaRegUserCircle /></li>
-                        </ul>
-                    </div>
-                    <Button variant="secondary" className="toggle_btn"><FiMenu /></Button>
+                    <ul style={navMenu} className={`${toggle ? "toggle_nav_icons" : "nav_icons"}`}>
+                        <li><BsSearch /></li>
+                        <li className="cart">
+                            <FaOpencart />
+                            <span className="cart_count">0</span>
+                        </li>
+                        <li><FaRegUserCircle /></li>
+                    </ul>
+
+                    {/* toggle button for navbar  */}
+                    <Button
+                        variant="secondary"
+                        className="toggle_btn"
+                        onClick={() => setToggle(!toggle)}
+                    >
+                        <FiMenu />
+                    </Button>
                 </div>
             </Container >
         </div >

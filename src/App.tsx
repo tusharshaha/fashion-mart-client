@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Home from './Pages/Home/Home';
+import Shop from './Pages/Shop/Shop';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
         </Routes>
       </BrowserRouter>
     </div>

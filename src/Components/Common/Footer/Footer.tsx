@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoMail } from "react-icons/go";
 import { FaFacebookF, FaTwitter, FaYoutube, FaGoogle, FaInstagram } from "react-icons/fa";
 import payment from "../../../assets/images/payment.png";
 import "./Footer.css";
 import { Container } from 'react-bootstrap';
+import { BiArrowToTop } from 'react-icons/bi';
 
 const Footer: React.FC = () => {
+    const [topClass, setTopClass] = useState("d-none")
+    const goTopHandler = () => {
+        if (window.scrollY >= 500) {
+            setTopClass("")
+        } else {
+            setTopClass("d-none");
+        }
+    }
+    window.addEventListener('scroll', goTopHandler);
+
     return (
         <div className='footer'>
             <Container>
@@ -33,6 +44,12 @@ const Footer: React.FC = () => {
                     <img src={payment} alt="" />
                 </div>
             </Container>
+            {/* go to top button  */}
+            <a href="#top">
+                <button className={`${topClass} go_top`}>
+                    <BiArrowToTop />
+                </button>
+            </a>
         </div>
     );
 };

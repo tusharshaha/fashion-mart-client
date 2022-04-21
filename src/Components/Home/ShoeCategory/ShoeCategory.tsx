@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/custom_hooks';
+import Product from '../../Shop/Product/Product';
 
 const ShoeCategory = () => {
     const [active, setActive] = useState<string>("Tennis");
@@ -25,20 +26,11 @@ const ShoeCategory = () => {
             </div>
             <Row xs={1} md={2} lg={4} className="g-3 mt-3">
                 {
-                    filteredProducts.map(product => <Col data-aos="zoom-in" key={product._id}>
-                        <div className="mb-3 product_img">
-                            <img src={product.img} alt="" />
-                        </div>
-                        <h5>{product.name}</h5>
-                        <p className="text-capitalize">
-                            <em className='me-2'><b>Category:</b></em>
-                            {product.category}
-                        </p>
-                        <div style={{fontSize: "18px"}} className='fw-bold text-danger'>
-                            <span><del>&#36;{product.prevPrice}.00</del></span>
-                            <span className="ms-3">&#36;{product.curPrice}.00</span>
-                        </div>
-                    </Col>)
+                    filteredProducts.map(product => <Product
+                        key={product._id}
+                        product={product}
+                        anim="zoom-in"
+                    />)
                 }
             </Row>
         </Container>

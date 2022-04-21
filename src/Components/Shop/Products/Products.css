@@ -1,0 +1,32 @@
+.product_view button {
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.search_input {
+    position: relative;
+    margin-left: 20px;
+}
+
+.search_input input {
+    padding: 4px 10px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.search_input .search_icon {
+    position: absolute;
+    right: 5px;
+    bottom: 8px;
+}
+
+.search_input input:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 440px) {
+    .search_input input {
+        width: 170px;
+    }
+}

@@ -1,0 +1,40 @@
+.product_list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.productList_img {
+    width: 240px;
+}
+
+.productList_text {
+    width: 480px;
+}
+
+.productList_btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product_btn {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 6px 10px;
+}
+
+@media only screen and (max-width: 760px) {
+    .productList_img {
+        width: 95%;
+    }
+
+    .productList_text {
+        width: 95%;
+    }
+
+    .product_list {
+        flex-direction: column;
+    }
+}

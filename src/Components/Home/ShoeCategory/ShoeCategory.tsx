@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/custom_hooks';
 import Product from '../../Shop/Product/Product';
 
-const ShoeCategory = () => {
+const ShoeCategory: React.FC = () => {
     const [active, setActive] = useState<string>("Tennis");
     const catBtns: string[] = ["Tennis", "Fitness", "Football"];
     const { products } = useProducts();

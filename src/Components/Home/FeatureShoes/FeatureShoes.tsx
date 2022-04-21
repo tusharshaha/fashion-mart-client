@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useProducts } from '../../../hooks/custom_hooks';
 import Product from '../../Shop/Product/Product';

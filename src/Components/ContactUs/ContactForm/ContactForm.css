@@ -1,0 +1,31 @@
+.pdts_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pdts_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdts_input label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.pdts_input input {
+    border: 2px solid #aeabab;
+    padding: 8px 15px;
+}
+
+.pdts_input input:focus,
+.pdts_input textarea:focus {
+    outline: none;
+}
+
+.pdts_input textarea {
+    border: 2px solid #aeabab;
+    padding: 8px 15px;
+    resize: none;
+}

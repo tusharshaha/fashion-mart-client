@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
                                 <Link style={{ color: color ? "black" : "white" }} to="/shop">Shop</Link>
                             </li>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/contactUs">Contact Us</Link>
+                                <Link style={{ color: color ? "black" : "white" }} to="/contact">Contact Us</Link>
                             </li>
                             <li>
                                 <Link style={{ color: color ? "black" : "white" }} to="/home">About Us</Link>

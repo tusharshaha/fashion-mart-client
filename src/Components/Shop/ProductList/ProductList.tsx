@@ -6,11 +6,12 @@ import "./ProductList.css";
 interface props {
     product: productType,
     key: string,
+    anim?: "zoom-in" | "fade-in" | "fade-up"
 }
 
-const ProductList: React.FC<props> = ({ product }) => {
+const ProductList: React.FC<props> = ({ product, anim }) => {
     return (
-        <div className='product_list'>
+        <div data-aos={anim} className='product_list'>
             <div className='productList_img'>
                 <img src={product.img} className="w-100" alt="" />
             </div>

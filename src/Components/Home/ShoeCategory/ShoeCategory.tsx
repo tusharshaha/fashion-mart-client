@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/custom_hooks';
 import Product from '../../Shop/Product/Product';
 
@@ -24,6 +24,11 @@ const ShoeCategory: React.FC = () => {
                     }
                 </div>
             </div>
+            {products.length === 0 &&
+                <div className="text-center py-5">
+                    <Spinner animation="border" variant="danger" className="p-4 fs-2" />
+                </div>
+            }
             <Row xs={1} md={2} lg={4} className="g-3 mt-3">
                 {
                     filteredProducts.map(product => <Product

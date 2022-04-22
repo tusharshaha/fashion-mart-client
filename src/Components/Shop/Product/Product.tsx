@@ -4,7 +4,7 @@ import { productType } from '../../../util/types';
 interface props {
     product: productType,
     key: string,
-    anim?: "zoom-in" | "fade-in"
+    anim?: "zoom-in" | "fade-in" | "fade-up"
 }
 
 const Product: React.FC<props> = ({ product, anim }) => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/custom_hooks';
 import Product from '../Product/Product';
 import { BsFillGrid3X3GapFill, BsSearch } from "react-icons/bs";
@@ -44,12 +44,18 @@ const Products: React.FC = () => {
                     <BsSearch className="search_icon" />
                 </div>
             </div>
+            {products.length === 0 &&
+                <div className="text-center py-5">
+                    <Spinner animation="border" variant="danger"  className="p-4 fs-2"/>
+                </div>
+            }
             {view === "grid" ?
                 <Row xs={1} md={2} lg={3} className="g-4 mb-5">
                     {
                         filtredProducts.map(product => <Product
                             key={product._id}
                             product={product}
+                            anim="fade-up"
                         />)
                     }
                 </Row>
@@ -59,6 +65,7 @@ const Products: React.FC = () => {
                         filtredProducts.map(product => <ProductList
                             key={product._id}
                             product={product}
+                            anim="fade-up"
                         />)
                     }
                 </Row>

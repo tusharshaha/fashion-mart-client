@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Home from './Pages/Home/Home';
 import Shop from './Pages/Shop/Shop';
+import NotFound from './Pages/NotFound/NotFound';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

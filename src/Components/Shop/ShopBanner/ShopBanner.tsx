@@ -1,9 +1,9 @@
 import React from 'react';
-import banner from "../../../assets/images/shop_banner.gif";
+import banner from "../../../assets/images/shopBanner.png";
 
 const ShopBanner: React.FC = () => {
     return (
-        <div style={{height: "560px"}} className='w-100 mb-5'>
+        <div style={{height: "450px"}} className='w-100 mb-5'>
             <img src={banner} alt="" className='w-100 h-100' />
         </div>
     );

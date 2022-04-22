@@ -8,7 +8,7 @@ const NotFound: React.FC = () => {
         <Container>
             <div className='not-found'>
                 <img src={`https://image.freepik.com/free-vector/error-404-concept-illustration_114360-1811.jpg`} alt="" />
-                <Button onClick={() => navigate('/home')} variant='outline-danger'> Back To Home</Button>
+                <Button onClick={() => navigate(-1)} variant='outline-danger'>Go Back</Button>
             </div>
         </Container>
     )

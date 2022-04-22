@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import { BsSearch } from 'react-icons/bs';
+import { CgClipboard } from 'react-icons/cg';
 import { FaOpencart, FaRegUserCircle } from 'react-icons/fa';
 import { FiMenu } from "react-icons/fi";
 import './NavBar.css';
@@ -45,17 +45,27 @@ const NavBar: React.FC = () => {
                                 <Link style={{ color: color ? "black" : "white" }} to="/contact">Contact Us</Link>
                             </li>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/home">About Us</Link>
+                                <Link style={{ color: color ? "black" : "white" }} to="/about">About Us</Link>
                             </li>
                         </ul>
                     </div>
                     <ul style={navMenu} className={`${toggle ? "toggle_nav_icons" : "nav_icons"}`}>
-                        <li><BsSearch /></li>
-                        <li className="cart">
-                            <FaOpencart />
-                            <span className="cart_count">0</span>
+                        <li>
+                            <Link style={{ color: color ? "black" : "white" }} to="/wishlist">
+                                <CgClipboard />
+                            </Link>
                         </li>
-                        <li><FaRegUserCircle /></li>
+                        <li >
+                            <Link className="cart" style={{ color: color ? "black" : "white" }} to="/cart">
+                                <FaOpencart />
+                                <span className="cart_count">0</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link style={{ color: color ? "black" : "white" }} to="/account">
+                                <FaRegUserCircle />
+                            </Link>
+                        </li>
                     </ul>
 
                     {/* toggle button for navbar  */}

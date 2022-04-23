@@ -16,7 +16,7 @@ const AboutService: React.FC = () => {
     return (
         <div className='about_service'>
             <Container>
-                <Row>
+                <Row xs={1} lg={3} className="g-3">
                     {
                         services.map((service, i) => <Col key={i}>
                             <div className="service_icon">

@@ -1,4 +1,4 @@
-.slider1{
+.slider1 {
     background-image: url('../../../assets/images/slider1.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,8 @@
     color: #fff;
     height: 675px;
 }
-.slider2{
+
+.slider2 {
     background-image: url('../../../assets/images/slider2.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -22,11 +23,13 @@
     color: #fff;
     height: 675px;
 }
-.banner_content p{
+
+.banner_content p {
     margin-bottom: 2px;
     font-size: 18px;
 }
-.shop_btn{
+
+.shop_btn {
     text-transform: uppercase;
     background-color: transparent;
     font-weight: 500;
@@ -35,12 +38,14 @@
     border-radius: 30px;
     padding: 15px 35px;
 }
-.shop_btn:hover{
+
+.shop_btn:hover {
     background-color: #fff;
     color: black;
     transition: all 0.1s;
 }
-.carousel-control-prev-icon{
+
+.carousel-control-prev-icon {
     background-color: rgba(0, 0, 0, 0.1);
     width: 68px;
     height: 68px;
@@ -49,17 +54,20 @@
     position: relative;
     transition: 0.3s;
 }
-.carousel-control-prev:hover .carousel-control-prev-icon{
-    background-color: rgba(255, 0, 0, 0.797);
+
+.carousel-control-prev:hover .carousel-control-prev-icon {
+    background-color: #ff0000cb;
 }
-.carousel-control-prev-icon::after{
+
+.carousel-control-prev-icon::after {
     content: '<';
     position: absolute;
-    top: calc(50% - 30px);
+    top: calc(50% - 27px);
     left: calc(50% - 10px);
     font-size: 35px;
 }
-.carousel-control-next-icon{
+
+.carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.1);
     width: 68px;
     height: 68px;
@@ -68,22 +76,26 @@
     position: relative;
     transition: 0.3s;
 }
-.carousel-control-next:hover .carousel-control-next-icon{
-    background-color: rgba(255, 0, 0, 0.797);
+
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #ff0000cb;
 }
-.carousel-control-next-icon::after{
+
+.carousel-control-next-icon::after {
     content: '>';
     position: absolute;
-    top: calc(50% - 30px);
+    top: calc(50% - 27px);
     left: calc(50% - 10px);
     font-size: 35px;
 }
+
 .carousel-indicators [data-bs-target] {
     background-color: black;
     width: 15px;
     height: 15px;
     border-radius: 50%;
 }
-.carousel-indicators .active{
+
+.carousel-indicators .active {
     background-color: red;
 }

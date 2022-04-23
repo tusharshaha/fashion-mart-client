@@ -1,0 +1,14 @@
+.about_service {
+    background-image: url('../../../assets/images/about-us-policy-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+}
+.service_icon{
+    font-size: 42px;
+}

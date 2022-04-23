@@ -8,6 +8,7 @@ import Shop from './Pages/Shop/Shop';
 import NotFound from './Pages/NotFound/NotFound';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import About from './Pages/About/About';
+import Account from './Pages/Account/Account';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/about' element={<About />} />
+          <Route path='/account' element={<Account />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

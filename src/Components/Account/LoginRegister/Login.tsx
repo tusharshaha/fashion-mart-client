@@ -2,20 +2,24 @@ import { GraphQLClient } from 'graphql-request';
 import React, { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { login_user } from '../../../graphql/schema';
+import { addUser } from '../../../redux/Slices/userAuthSlice';
+import { AppDispatch } from '../../../redux/store';
 import { GRAPHQL_URL } from '../../../util/BaseUrl';
 import { loginUser } from '../../../util/types';
 
 const Login: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
+    const dispatch = useDispatch<AppDispatch>()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const handleLogin = handleSubmit(async (data) => {
         setLoading(true);
         const client = new GraphQLClient(GRAPHQL_URL);
         await client.request<{ loginUser: loginUser }>(login_user, data)
             .then(res => {
-                console.log(res.loginUser)
+                dispatch(addUser(res.loginUser));
                 Swal.fire({
                     icon: "success",
                     title: "Succesfully Login",

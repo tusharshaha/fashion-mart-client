@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import userReducer from "./Slices/userAuthSlice";
-import { persistReducer } from "redux-persist";
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
-// combine all reducer with root reducer 
+// combine all reducer with root reducer
 const rootReducer = combineReducers({
     authUser: userReducer,
 })
@@ -16,9 +16,13 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 // create redux store
 export const store = configureStore({
-    reducer: {
-        root: persistedReducer
-    }
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            },
+        })
 })
 
 export type RootState = ReturnType<typeof store.getState>;

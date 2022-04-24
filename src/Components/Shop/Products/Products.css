@@ -4,6 +4,37 @@
     font-size: 22px;
 }
 
+.product_actions {
+    position: absolute;
+    bottom: 29px;
+    left: calc(50% - 75px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.details_product:hover .product_actions {
+    opacity: 1;
+}
+
+.product_actions button.icon {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.product_actions button.icon:hover {
+    color: red;
+}
+
 .search_input {
     position: relative;
     margin-left: 20px;

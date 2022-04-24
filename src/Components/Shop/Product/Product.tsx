@@ -1,6 +1,8 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { productType } from '../../../util/types';
+import { FaRegHeart } from "react-icons/fa";
+import { MdAddShoppingCart, MdSearch } from "react-icons/md"
 interface props {
     product: productType,
     key: string,
@@ -9,9 +11,20 @@ interface props {
 
 const Product: React.FC<props> = ({ product, anim }) => {
     return (
-        <Col data-aos={anim}>
+        <Col data-aos={anim} className="details_product">
             <div className="mb-3 product_img">
                 <img src={product.img} alt="" />
+                <div className='product_actions'>
+                    <button className='icon'>
+                        <FaRegHeart />
+                    </button>
+                    <button className='icon'>
+                        <MdAddShoppingCart />
+                    </button>
+                    <button className='icon'>
+                        <MdSearch />
+                    </button>
+                </div>
             </div>
             <h5>{product.name}</h5>
             <p className="text-capitalize">

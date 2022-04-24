@@ -16,10 +16,10 @@ export interface loginUser {
 }
 
 export interface registerUser {
-    userName: string,
-    userFullName: string,
-    email: string,
-    password: string,
+    userName?: string,
+    userFullName?: string,
+    email?: string,
+    password?: string,
     register: boolean
 }
 

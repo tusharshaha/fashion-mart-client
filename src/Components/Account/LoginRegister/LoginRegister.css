@@ -4,6 +4,15 @@
     justify-content: space-between;
 }
 
+.hover-red {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.hover-red:hover {
+    color: red;
+}
+
 .account_btn {
     border: none;
     border-radius: 20px;

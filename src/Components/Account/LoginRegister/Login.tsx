@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
 import { login_user } from '../../../graphql/schema';
 import { GRAPHQL_URL } from '../../../util/BaseUrl';
+import { loginUser } from '../../../util/types';
 
 const Login: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -12,7 +13,7 @@ const Login: React.FC = () => {
     const handleLogin = handleSubmit(async (data) => {
         setLoading(true);
         const client = new GraphQLClient(GRAPHQL_URL);
-        await client.request(login_user, data)
+        await client.request<{ loginUser: loginUser }>(login_user, data)
             .then(res => {
                 console.log(res.loginUser)
                 Swal.fire({
@@ -43,8 +44,8 @@ const Login: React.FC = () => {
                 </div>
                 <div className="pdts_input">
                     <label>Your Password *</label>
-                    <input type="password" {...register("password", { required: true })} />
-                    {errors.password && <p className='text-danger mt-2 mb-0'>Pasword is Required</p>}
+                    <input type="password" {...register("password", { required: true, minLength: 6 })} />
+                    {errors.password && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                 </div>
                 <div className=' mt-4 login_action'>
                     <p className='hover-red mb-0'>Lost Your Password?</p>

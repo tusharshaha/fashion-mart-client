@@ -7,8 +7,9 @@ import Login from './Login';
 import { GraphQLClient } from 'graphql-request';
 import { GRAPHQL_URL } from '../../../util/BaseUrl';
 import { register_user } from '../../../graphql/schema';
-import "./LoginRegister.css";
 import Swal from 'sweetalert2';
+import { registerUser } from '../../../util/types';
+import "./LoginRegister.css";
 
 const LoginRegister: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -16,15 +17,16 @@ const LoginRegister: React.FC = () => {
     const handleRegister = handleSubmit(async (data) => {
         setLoading(true);
         const client = new GraphQLClient(GRAPHQL_URL);
-        await client.request(register_user, { input: data })
+        await client.request<{ registerUser: registerUser }>(register_user, { input: data })
             .then(res => {
-                console.log(res.registerUser)
-                Swal.fire({
-                    icon: "success",
-                    title: "Successfully Registerd",
-                    text: "Now you can login via your registered email and password",
-                })
-                reset();
+                if (res.registerUser.register) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Successfully Registerd",
+                        text: "Now you can login via your registered email and password",
+                    })
+                    reset();
+                }
             })
             .catch(err => {
                 Swal.fire({
@@ -71,8 +73,8 @@ const LoginRegister: React.FC = () => {
                                 </div>
                                 <div className="pdts_input">
                                     <label>Your Password *</label>
-                                    <input type="password" {...register("password", { required: true })} />
-                                    {errors.password && <p className='text-danger mt-2 mb-0'>This field can't be empty</p>}
+                                    <input type="password" {...register("password", { required: true, minLength: 6 })} />
+                                    {errors.password && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                                 </div>
                                 <div className='text-end'>
                                     <button className="account_btn">Register</button>

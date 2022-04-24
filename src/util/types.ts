@@ -8,4 +8,18 @@ export interface productType {
     category: string
 }
 
+export interface loginUser {
+    token: string,
+    userName: string,
+    userFullName: string,
+    email: string
+}
+
+export interface registerUser {
+    userName: string,
+    userFullName: string,
+    email: string,
+    password: string,
+    register: boolean
+}
 

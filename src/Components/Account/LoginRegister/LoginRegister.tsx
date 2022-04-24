@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./LoginRegister.css";
 import loginBanner from '../../../assets/images/login.png';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import "./LoginRegister.css";
 import Login from './Login';
+import { GraphQLClient } from 'graphql-request';
+import { GRAPHQL_URL } from '../../../util/BaseUrl';
+import { register_user } from '../../../graphql/schema';
+import "./LoginRegister.css";
+import Swal from 'sweetalert2';
 
 const LoginRegister: React.FC = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const handleRegister = handleSubmit((data) => console.log(data));
+    const [loading, setLoading] = useState<boolean>(false);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const handleRegister = handleSubmit(async (data) => {
+        setLoading(true);
+        const client = new GraphQLClient(GRAPHQL_URL);
+        await client.request(register_user, { input: data })
+            .then(res => {
+                console.log(res.registerUser)
+                Swal.fire({
+                    icon: "success",
+                    title: "Successfully Registerd",
+                    text: "Now you can login via your registered email and password",
+                })
+                reset();
+            })
+            .catch(err => {
+                Swal.fire({
+                    icon: "error",
+                    title: err.response.errors[0].message
+                })
+            }).finally(() => setLoading(false));
+    });
     return (
         <>
             <div className='banner'>
@@ -27,6 +51,9 @@ const LoginRegister: React.FC = () => {
                     <Col>
                         <h2 className='mb-4'>Register</h2>
                         <div className='border rounded p-4'>
+                            {loading && <div className='my-3 text-center'>
+                                <Spinner animation="border" variant="primary" />
+                            </div>}
                             <form onSubmit={handleRegister} className="pdts_form">
                                 <div className="pdts_input">
                                     <label>Your Name *</label>

@@ -15,7 +15,7 @@
 }
 
 .pdts_input input {
-    border: 2px solid #aeabab;
+    border: 1px solid #d1cdcd;
     padding: 8px 15px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .pdts_input textarea {
-    border: 2px solid #aeabab;
+    border: 1px solid #d1cdcd;
     padding: 8px 15px;
     resize: none;
 }

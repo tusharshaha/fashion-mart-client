@@ -5,8 +5,11 @@ import { CgClipboard } from 'react-icons/cg';
 import { FaOpencart, FaRegUserCircle } from 'react-icons/fa';
 import { FiMenu } from "react-icons/fi";
 import './NavBar.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 const NavBar: React.FC = () => {
+    const { totalCount } = useSelector((state: RootState) => state.cart);
     // change navbar color when scroll
     const [color, setColor] = useState<boolean>(false);
     const [toggle, setToggle] = useState<boolean>(false);
@@ -58,7 +61,7 @@ const NavBar: React.FC = () => {
                         <li >
                             <Link className="cart" style={{ color: color ? "black" : "white" }} to="/cart">
                                 <FaOpencart />
-                                <span className="cart_count">0</span>
+                                <span className="cart_count">{totalCount}</span>
                             </Link>
                         </li>
                         <li>

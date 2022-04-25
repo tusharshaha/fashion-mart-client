@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
-import { useProducts } from '../../../hooks/custom_hooks';
+import { useProducts } from '../../../hooks/useProducts';
 import Product from '../Product/Product';
 import { BsFillGrid3X3GapFill, BsSearch } from "react-icons/bs";
 import { FaList } from "react-icons/fa";

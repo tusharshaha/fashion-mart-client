@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { login_user } from '../../../graphql/schema';
-import { addUser } from '../../../redux/Slices/userAuthSlice';
+import { addUser } from '../../../redux/features/userAuthSlice';
 import { AppDispatch } from '../../../redux/store';
 import { GRAPHQL_URL } from '../../../util/BaseUrl';
 import { loginUser } from '../../../util/types';

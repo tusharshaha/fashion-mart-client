@@ -3,6 +3,11 @@ import { Col } from 'react-bootstrap';
 import { productType } from '../../../util/types';
 import { FaRegHeart } from "react-icons/fa";
 import { MdAddShoppingCart, MdSearch } from "react-icons/md"
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../redux/store';
+import { addToCart, getTotal } from '../../../redux/features/cartSlice';
+import Swal from 'sweetalert2';
+import { addToWishlist } from '../../../redux/features/wishlistSlice';
 interface props {
     product: productType,
     key: string,
@@ -10,15 +15,48 @@ interface props {
 }
 
 const Product: React.FC<props> = ({ product, anim }) => {
+    const dispatch = useDispatch<AppDispatch>();
+    const handleAddToCart = (product: productType) => {
+        // dispactch for add to cart
+        dispatch(addToCart({
+            id: product._id,
+            img: product.img,
+            name: product.name,
+            curPrice: product.curPrice,
+            qty: 1
+        }));
+        // dispatch for get total
+        dispatch(getTotal());
+        Swal.fire({
+            icon: "success",
+            title: "Successfully Added To Cart",
+            showConfirmButton: false,
+            timer: 1800
+        })
+    }
+    const handleAddToWishlist = (product: productType) => {
+        dispatch(addToWishlist({
+            id: product._id,
+            img: product.img,
+            name: product.name,
+            curPrice: product.curPrice,
+        }))
+    }
     return (
         <Col data-aos={anim} className="details_product">
             <div className="mb-3 product_img">
                 <img src={product.img} alt="" />
                 <div className='product_actions'>
-                    <button className='icon'>
+                    <button
+                        onClick={() => handleAddToWishlist(product)}
+                        className='icon'
+                    >
                         <FaRegHeart />
                     </button>
-                    <button className='icon'>
+                    <button
+                        onClick={() => handleAddToCart(product)}
+                        className='icon'
+                    >
                         <MdAddShoppingCart />
                     </button>
                     <button className='icon'>

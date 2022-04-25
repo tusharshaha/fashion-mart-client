@@ -1,11 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import userReducer from "./Slices/userAuthSlice";
+import userReducer from "./features/userAuthSlice";
+import cartReducer from "./features/cartSlice";
+import wishlistReducer from "./features/wishlistSlice";
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
 // combine all reducer with root reducer
 const rootReducer = combineReducers({
     authUser: userReducer,
+    cart: cartReducer,
+    wishlist: wishlistReducer
 })
 // configure redux persist
 const persistConfig = {

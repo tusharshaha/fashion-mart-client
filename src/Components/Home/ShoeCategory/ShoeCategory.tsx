@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
-import { useProducts } from '../../../hooks/custom_hooks';
+import { useProducts } from '../../../hooks/useProducts';
 import Product from '../../Shop/Product/Product';
 
 const ShoeCategory: React.FC = () => {

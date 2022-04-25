@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useProducts } from '../../../hooks/custom_hooks';
+import { useProducts } from '../../../hooks/useProducts';
 import Product from '../../Shop/Product/Product';
 import "./FeaturedShoes.css";
 

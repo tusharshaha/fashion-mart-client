@@ -5,7 +5,8 @@ const initialState: { value: loginUser } = {
         email: "",
         token: "",
         userName: "",
-        userFullName: ""
+        userFullName: "",
+        role: ""
     }
 }
 export const userAuthSlice = createSlice({

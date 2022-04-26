@@ -1,7 +1,9 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 const Header: React.FC = () => {
+    const navigate = useNavigate()
     return (
         <Carousel interval={null} id='top'>
             <Carousel.Item>
@@ -12,8 +14,7 @@ const Header: React.FC = () => {
                             <h1 data-aos='fade-right' data-aos-delay='400' className='text-uppercase fw-bold'>This Black</h1>
                             <p data-aos='fade-right' data-aos-delay='500' className='text-uppercase fw-light mt-4'>An Exclusive Selection of this season's Trends.</p>
                             <p data-aos='fade-right' data-aos-delay='700' className='text-uppercase fw-bold'>Exclusively Online</p>
-                            <p></p>
-                            <button data-aos='fade-right' data-aos-delay='500' className='shop_btn mt-5'>Shop Now</button>
+                            <button onClick={() => navigate('/shop')} data-aos='fade-right' data-aos-delay='500' className='shop_btn mt-5'>Shop Now</button>
                         </div>
                     </Container>
                 </div>
@@ -26,8 +27,7 @@ const Header: React.FC = () => {
                             <h1 className='text-uppercase fw-bold'>This Black</h1>
                             <p className='text-uppercase fw-light mt-4'>An Exclusive Selection of this season's Trends.</p>
                             <p className='text-uppercase fw-bold'>Exclusively Online</p>
-                            <p></p>
-                            <button className='shop_btn mt-5'>Shop Now</button>
+                            <button onClick={() => navigate('/shop')} className='shop_btn mt-5'>Shop Now</button>
                         </div>
                     </Container>
                 </div>

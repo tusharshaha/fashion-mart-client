@@ -19,7 +19,8 @@ export interface loginUser {
     token: string,
     userName: string,
     userFullName: string,
-    email: string
+    email: string,
+    role: string
 }
 
 export interface registerUser {

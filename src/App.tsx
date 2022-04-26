@@ -10,8 +10,10 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import About from './Pages/About/About';
 import Account from './Pages/Account/Account';
 import Cart from './Pages/Cart/Cart';
+import Wishlist from './Pages/Wishlist/Wishlist';
 
 const App: React.FC = () => {
+  // initialize AOS 
   useEffect(() => {
     AOS.init({ offset: 160, duration: 1000, delay: 300 });
   });
@@ -24,6 +26,7 @@ const App: React.FC = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/about' element={<About />} />
+          <Route path='/wishlist' element={<Wishlist />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
           <Route path='*' element={<NotFound />} />

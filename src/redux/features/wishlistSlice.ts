@@ -1,15 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
+import { wishlistType } from "../../util/types";
 
-interface wishlist {
-    id: string,
-    img: string,
-    name: string,
-    curPrice: number,
-    stockStatus?: string
-}
-
-const initialState: { items: wishlist[] } = {
+const initialState: { items: wishlistType[] } = {
     items: []
 }
 
@@ -17,17 +10,16 @@ const wishlistSlice = createSlice({
     name: "wishlist",
     initialState,
     reducers: {
-        addToWishlist: (state, action: PayloadAction<wishlist>) => {
+        addToWishlist: (state, action: PayloadAction<wishlistType>) => {
             const findOldProduct = state.items.find(ele => ele.id === action.payload.id);
             if (findOldProduct) {
                 Swal.fire({
                     icon: "warning",
-                    title: "Product already added to wishlist!"
+                    title: "This item already added to wishlist!"
                 })
                 return state
             } else {
-                const newProduct = { ...action.payload, stockStatus: "In Stock" };
-                state.items.push(newProduct);
+                state.items.push(action.payload);
                 Swal.fire({
                     icon: "success",
                     title: "Successfully added to wishlist",

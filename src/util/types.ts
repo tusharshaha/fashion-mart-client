@@ -8,6 +8,13 @@ export interface productType {
     category: string
 }
 
+export interface wishlistType {
+    id: string,
+    img: string,
+    name: string,
+    curPrice: number,
+}
+
 export interface loginUser {
     token: string,
     userName: string,
@@ -22,4 +29,3 @@ export interface registerUser {
     password?: string,
     register: boolean
 }
-

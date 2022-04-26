@@ -2,6 +2,11 @@ import React from 'react';
 import { productType } from '../../../util/types';
 import { BsFillSuitHeartFill, BsEyeFill } from "react-icons/bs";
 import "./ProductList.css";
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../redux/store';
+import { addToCart, getTotal } from '../../../redux/features/cartSlice';
+import { addToWishlist } from '../../../redux/features/wishlistSlice';
+import Swal from 'sweetalert2';
 
 interface props {
     product: productType,
@@ -10,6 +15,34 @@ interface props {
 }
 
 const ProductList: React.FC<props> = ({ product, anim }) => {
+    const dispatch = useDispatch<AppDispatch>();
+    const handleAddToCart = (product: productType) => {
+        // dispactch for add to cart
+        dispatch(addToCart({
+            id: product._id,
+            img: product.img,
+            name: product.name,
+            curPrice: product.curPrice,
+            subTotal: product.curPrice,
+            qty: 1
+        }));
+        // dispatch for get total
+        dispatch(getTotal());
+        Swal.fire({
+            icon: "success",
+            title: "Successfully Added To Cart",
+            showConfirmButton: false,
+            timer: 1800
+        })
+    }
+    const handleAddToWishlist = (product: productType) => {
+        dispatch(addToWishlist({
+            id: product._id,
+            img: product.img,
+            name: product.name,
+            curPrice: product.curPrice,
+        }))
+    }
     return (
         <div data-aos={anim} className='product_list'>
             <div className='productList_img'>
@@ -25,8 +58,18 @@ const ProductList: React.FC<props> = ({ product, anim }) => {
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non perspiciatis, nisi quas in, nobis incidunt natus aperiam, maxime exercitationem neque totam asperiores numquam necessitatibus suscipit earum odit laborum quia dolorum quaerat nostrum placeat et commodi.</p>
                 <div className='productList_btns'>
-                    <button className="product_btn">ADD TO CART</button>
-                    <button className="product_btn"><BsFillSuitHeartFill /></button>
+                    <button
+                        className="product_btn"
+                        onClick={() => handleAddToCart(product)}
+                    >
+                        ADD TO CART
+                    </button>
+                    <button
+                        className="product_btn"
+                        onClick={() => handleAddToWishlist(product)}
+                    >
+                        <BsFillSuitHeartFill />
+                    </button>
                     <button className="product_btn"><BsEyeFill /></button>
                 </div>
             </div>

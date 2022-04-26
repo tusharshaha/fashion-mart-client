@@ -1,0 +1,109 @@
+.cus_td_container {
+    overflow-x: auto;
+}
+
+.cus_table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+.delete_icon {
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+.qty_action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #ff082d44;
+    padding: 6px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.qty_container {
+    width: 195px;
+}
+
+.qty_action button {
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cus_table thead>tr {
+    background-color: #efefef;
+    border-bottom: 3px solid red;
+}
+
+.cus_table th,
+td {
+    border: 1px solid #efefef;
+    padding: 10px;
+}
+
+.cus_table_img {
+    width: 100px;
+    height: 100px;
+}
+
+.cart_action {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.cupon input {
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+.cart_btn {
+    padding: 8px 22px;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.cart_btn:hover {
+    background-color: black;
+}
+
+.calc_cart {
+    width: 470px;
+    margin-top: 50px;
+    border: 1px solid #efefef;
+}
+
+.calc_cart h4 {
+    background-color: #efefef;
+    text-transform: uppercase;
+    border-bottom: 3px solid red;
+    padding: 5px 10px;
+}
+
+@media only screen and (max-width: 790px) {
+    .cus_table {
+        width: 790px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .calc_cart {
+        width: 100%;
+    }
+}

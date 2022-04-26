@@ -5,13 +5,17 @@ interface cart {
     img: string,
     name: string,
     curPrice: number,
-    subTotal?: number,
+    subTotal: number,
     qty: number
 }
 interface init {
     items: cart[],
     totalCount: number,
     totalAmount: number
+}
+interface qtyType {
+    id: string,
+    qty: number
 }
 const initialState: init = {
     items: [],
@@ -31,6 +35,7 @@ export const cartSlice = createSlice({
                 state.items.forEach(ele => {
                     if (ele.id === action.payload.id) {
                         ele.qty += action.payload.qty;
+                        ele.subTotal = ele.qty * ele.curPrice;
                     }
                 })
             }
@@ -40,13 +45,22 @@ export const cartSlice = createSlice({
         },
         clearCart: (state) => {
             state.items = [];
-            state.totalCount = 0
+            state.totalCount = 0;
+            state.totalAmount = 0;
+        },
+        handleQty: (state, action: PayloadAction<qtyType>) => {
+            state.items.forEach(item => {
+                if (item.id === action.payload.id) {
+                    item.qty = action.payload.qty;
+                    item.subTotal = item.qty * item.curPrice;
+                }
+            })
         },
         getTotal: (state) => {
-            const {totalPrice, totalQty} = state.items.reduce((cartTotal, cartItem) => {
-                const { curPrice, qty } = cartItem;
-                cartTotal.totalPrice = curPrice * qty;
+            const { totalPrice, totalQty } = state.items.reduce((cartTotal, cartItem) => {
+                const { qty, subTotal } = cartItem;
                 cartTotal.totalQty += qty;
+                cartTotal.totalPrice += subTotal
                 return cartTotal
             }, { totalPrice: 0, totalQty: 0 });
             state.totalAmount = totalPrice;
@@ -55,5 +69,5 @@ export const cartSlice = createSlice({
     }
 })
 
-export const { addToCart, removeFromCart, clearCart, getTotal } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart, handleQty, getTotal } = cartSlice.actions;
 export default cartSlice.reducer;

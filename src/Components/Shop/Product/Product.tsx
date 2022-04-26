@@ -23,6 +23,7 @@ const Product: React.FC<props> = ({ product, anim }) => {
             img: product.img,
             name: product.name,
             curPrice: product.curPrice,
+            subTotal: product.curPrice,
             qty: 1
         }));
         // dispatch for get total

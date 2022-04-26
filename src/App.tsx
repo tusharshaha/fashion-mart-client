@@ -9,6 +9,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import About from './Pages/About/About';
 import Account from './Pages/Account/Account';
+import Cart from './Pages/Cart/Cart';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/about' element={<About />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

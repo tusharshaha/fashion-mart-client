@@ -17,7 +17,7 @@ const WishlistTable: React.FC = () => {
             subTotal: item.curPrice,
             qty: 1
         }));
-        // update total 
+        // update total
         dispatch(getTotal())
         // remove added item from wishlist
         dispatch(removeFromWishlist(item.id));
@@ -56,7 +56,7 @@ const WishlistTable: React.FC = () => {
                                 </td>
                                 <td><img src={item.img} className="cus_table_img" alt="" /></td>
                                 <td>{item.name}</td>
-                                <td>&#36;{item.curPrice}</td>
+                                <td>&#36;{item.curPrice}.00</td>
                                 <td>In Stock</td>
                                 <td>
                                     <Button

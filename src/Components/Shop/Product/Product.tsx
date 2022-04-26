@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col } from 'react-bootstrap';
 import { productType } from '../../../util/types';
 import { FaRegHeart } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { AppDispatch } from '../../../redux/store';
 import { addToCart, getTotal } from '../../../redux/features/cartSlice';
 import Swal from 'sweetalert2';
 import { addToWishlist } from '../../../redux/features/wishlistSlice';
+import ProductDetails from '../ProductDetails/ProductDetails';
 interface props {
     product: productType,
     key: string,
@@ -15,6 +16,8 @@ interface props {
 }
 
 const Product: React.FC<props> = ({ product, anim }) => {
+    const [showModal, setShowModal] = useState<boolean>(false);
+    const [item, setItem] = useState<productType>();
     const dispatch = useDispatch<AppDispatch>();
     const handleAddToCart = (product: productType) => {
         // dispactch for add to cart
@@ -44,37 +47,47 @@ const Product: React.FC<props> = ({ product, anim }) => {
         }))
     }
     return (
-        <Col data-aos={anim} className="details_product">
-            <div className="mb-3 product_img">
-                <img src={product.img} alt="" />
-                <div className='product_actions'>
-                    <button
-                        onClick={() => handleAddToWishlist(product)}
-                        className='icon'
-                    >
-                        <FaRegHeart />
-                    </button>
-                    <button
-                        onClick={() => handleAddToCart(product)}
-                        className='icon'
-                    >
-                        <MdAddShoppingCart />
-                    </button>
-                    <button className='icon'>
-                        <MdSearch />
-                    </button>
+        <>
+            <Col data-aos={anim} className="details_product">
+                <div className="mb-3 product_img">
+                    <img src={product.img} alt="" />
+                    <div className='product_actions'>
+                        <button
+                            onClick={() => handleAddToWishlist(product)}
+                            className='icon'
+                        >
+                            <FaRegHeart />
+                        </button>
+                        <button
+                            onClick={() => handleAddToCart(product)}
+                            className='icon'
+                        >
+                            <MdAddShoppingCart />
+                        </button>
+                        <button onClick={() => {
+                            setItem(product)
+                            setShowModal(true)
+                        }} className='icon'>
+                            <MdSearch />
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <h5>{product.name}</h5>
-            <p className="text-capitalize">
-                <em className='me-2'><b>Category:</b></em>
-                {product.category}
-            </p>
-            <div style={{ fontSize: "18px" }} className='fw-bold text-danger'>
-                <span><del>&#36;{product.prevPrice}.00</del></span>
-                <span className="ms-3">&#36;{product.curPrice}.00</span>
-            </div>
-        </Col>
+                <h5>{product.name}</h5>
+                <p className="text-capitalize">
+                    <em className='me-2'><b>Category:</b></em>
+                    {product.category}
+                </p>
+                <div style={{ fontSize: "18px" }} className='fw-bold text-danger'>
+                    <span><del>&#36;{product.prevPrice}.00</del></span>
+                    <span className="ms-3">&#36;{product.curPrice}.00</span>
+                </div>
+            </Col>
+            <ProductDetails
+                product={item}
+                showModal={showModal}
+                setShowModal={setShowModal}
+            />
+        </>
     );
 };
 

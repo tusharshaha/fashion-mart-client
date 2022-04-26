@@ -71,7 +71,7 @@ const CartTable: React.FC = () => {
                                 </td>
                                 <td><img src={item.img} className="cus_table_img" alt="" /></td>
                                 <td>{item.name}</td>
-                                <td>&#36;{item.curPrice}</td>
+                                <td>&#36;{item.curPrice}.00</td>
                                 <td className='qty_container'>
                                     <div className='qty_action'>
                                         <button onClick={() => handleIncrease(item.id, item.qty)}>
@@ -83,7 +83,7 @@ const CartTable: React.FC = () => {
                                         </button>
                                     </div>
                                 </td>
-                                <td>&#36;{item.subTotal}</td>
+                                <td>&#36;{item.subTotal}.00</td>
                             </tr>)
                         }
                         <tr>

@@ -46,7 +46,7 @@ const Products: React.FC = () => {
             </div>
             {products.length === 0 &&
                 <div className="text-center py-5">
-                    <Spinner animation="border" variant="danger"  className="p-4 fs-2"/>
+                    <Spinner animation="border" variant="danger" className="p-4 fs-2" />
                 </div>
             }
             {view === "grid" ?

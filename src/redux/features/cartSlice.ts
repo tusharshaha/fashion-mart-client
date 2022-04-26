@@ -30,7 +30,8 @@ export const cartSlice = createSlice({
         addToCart: (state, action: PayloadAction<cart>) => {
             const findOldProduct = state.items.find(ele => ele.id === action.payload.id);
             if (!findOldProduct) {
-                state.items.push(action.payload);
+                const updatedSubTotal = action.payload.qty * action.payload.curPrice;
+                state.items.push({ ...action.payload, subTotal: updatedSubTotal });
             } else {
                 state.items.forEach(ele => {
                     if (ele.id === action.payload.id) {

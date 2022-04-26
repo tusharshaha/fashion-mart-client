@@ -2,9 +2,13 @@ import React, { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { Form, Modal } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/useProducts';
 import { productType } from '../../../util/types';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../redux/store';
+import { addToCart, getTotal } from '../../../redux/features/cartSlice';
 import { FaFacebookF, FaTwitter, FaPinterestP, FaGooglePlusG, FaLinkedinIn } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import "./ProductDetails.css";
+import Swal from 'sweetalert2';
 
 interface props {
     product: productType | undefined,
@@ -13,7 +17,8 @@ interface props {
 }
 const ProductDetails: React.FC<props> = ({ product, showModal, setShowModal }) => {
     const [gImg, setGimg] = useState<string>("");
-    const [qty, setQty] = useState<string>('1')
+    const [qty, setQty] = useState<string>('1');
+    const dispatch = useDispatch<AppDispatch>();
     const { products } = useProducts();
     const related = products.filter(ele => ele.category === product?.category)
     const gallery = related.map(ele => ele.img);
@@ -24,6 +29,25 @@ const ProductDetails: React.FC<props> = ({ product, showModal, setShowModal }) =
         { icon: <FaGooglePlusG />, color: "#DC5043" },
         { icon: <FaLinkedinIn />, color: "#010103" }
     ]
+    const handleAddToCart = () => {
+        const updatedQty = parseInt(qty);
+        dispatch(addToCart({
+            id: product?._id || "",
+            img: product?.img || "",
+            name: product?.name || "",
+            curPrice: product?.curPrice || 0,
+            subTotal: product?.curPrice || 0,
+            qty: updatedQty
+        }))
+        // update total
+        dispatch(getTotal());
+        Swal.fire({
+            icon: "success",
+            title: "Successfully Added To Cart",
+            showConfirmButton: false,
+            timer: 1800
+        })
+    }
     return (
         <Modal
             show={showModal}
@@ -81,7 +105,12 @@ const ProductDetails: React.FC<props> = ({ product, showModal, setShowModal }) =
                             min={1}
                             max={10}
                         />
-                        <button className="product_btn px-5">Add To Cart</button>
+                        <button
+                            className="product_btn px-5"
+                            onClick={handleAddToCart}
+                        >
+                            Add To Cart
+                        </button>
                     </div>
                     <p className='text-uppercase'>Share This Product</p>
                     <div className="pdt_icons">

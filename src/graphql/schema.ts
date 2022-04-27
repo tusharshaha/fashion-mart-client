@@ -13,6 +13,12 @@ export const product_query = gql`
           }
     }
 `
+
+export const order_product = gql`
+    mutation order($input: orderInput!){
+        orderProduct{input: $input}
+    }
+`
 export const all_orders_query = gql`
     {
         allOrders{

@@ -8,6 +8,21 @@ export interface productType {
     category: string
 }
 
+export interface order {
+    pId: string
+    pName: string
+    pPrice: number
+    pQty: number
+}
+
+export interface orderedProduct {
+    userEmail: string,
+    date: string,
+    status: string,
+    payment: string
+    products: order[],
+}
+
 export interface wishlistType {
     id: string,
     img: string,
@@ -20,7 +35,8 @@ export interface loginUser {
     userName: string,
     userFullName: string,
     email: string,
-    role: string
+    role: string,
+    createdAt?: string
 }
 
 export interface registerUser {

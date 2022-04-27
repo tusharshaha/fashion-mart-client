@@ -13,6 +13,50 @@ export const product_query = gql`
           }
     }
 `
+export const all_orders_query = gql`
+    {
+        allOrders{
+            userEmail
+            userName
+            userPhone
+            company
+            address
+            country
+            city
+            date
+            status
+            payment
+            products: {
+                pId
+                pName
+                pPrice
+                pQty
+            }
+        }
+    }
+`
+export const user_orders_query = gql`
+    query getUserOrders($email: String!){
+        userOrders(email: $email){
+            userEmail
+            userName
+            userPhone
+            company
+            address
+            country
+            city
+            date
+            status
+            payment
+            products: {
+                pId
+                pName
+                pPrice
+                pQty
+            }
+        }
+    }
+`
 export const single_product_query = gql`
     query getSingleProduct($id: ID!){
         product(id: $id){

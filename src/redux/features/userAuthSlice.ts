@@ -1,13 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { loginUser } from "../../util/types"
 const initialState: { value: loginUser } = {
-    value: {
-        email: "",
-        token: "",
-        userName: "",
-        userFullName: "",
-        role: ""
-    }
+    value: {} as loginUser
 }
 export const userAuthSlice = createSlice({
     name: "userAuth",
@@ -17,7 +11,7 @@ export const userAuthSlice = createSlice({
             state.value = action.payload
         },
         removeUser: (state) => {
-            state.value = initialState.value
+            state.value = {} as loginUser
         }
     }
 })

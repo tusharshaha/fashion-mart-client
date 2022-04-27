@@ -16,7 +16,7 @@ export const product_query = gql`
 
 export const order_product = gql`
     mutation order($input: orderInput!){
-        orderProduct{input: $input}
+        orderProduct(input: $input)
     }
 `
 export const all_orders_query = gql`
@@ -80,6 +80,7 @@ export const login_user = gql`
         loginUser(email: $email, password: $password) {
             userName
             userFullName
+            email
             token
         }
     }

@@ -10,6 +10,7 @@ import { RootState } from '../../../redux/store';
 
 const NavBar: React.FC = () => {
     const { totalCount } = useSelector((state: RootState) => state.cart);
+    const { email } = useSelector((state: RootState) => state.authUser.value)
     // change navbar color when scroll
     const [color, setColor] = useState<boolean>(false);
     const [toggle, setToggle] = useState<boolean>(false);
@@ -65,7 +66,10 @@ const NavBar: React.FC = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link style={{ color: color ? "black" : "white" }} to="/account">
+                            <Link
+                                style={{ color: color ? "black" : "white" }}
+                                to={email ? "/dashboard" : "/account"}
+                            >
                                 <FaRegUserCircle />
                             </Link>
                         </li>

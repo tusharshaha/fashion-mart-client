@@ -1,0 +1,29 @@
+.dash_layout {
+    display: flex;
+    gap: 20px;
+}
+
+.dashboard_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard_btns button,
+.dashboard_btns a {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 14px;
+    width: 175px;
+    text-align: left;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.dashboard_btns button:hover,
+.dashboard_btns a:hover {
+    background-color: #e50808;
+    color: white;
+}

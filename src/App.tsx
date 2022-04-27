@@ -11,9 +11,13 @@ import About from './Pages/About/About';
 import Account from './Pages/Account/Account';
 import Cart from './Pages/Cart/Cart';
 import Wishlist from './Pages/Wishlist/Wishlist';
+import Dashboard from './Components/Account/Dashboard/Dashboard/Dashboard';
+import UserHome from './Components/Account/Dashboard/User/UserHome/UserHome';
+import UserPrivateOutlet from './UserPrivateOutlet/UserPrivateOutlet';
+import Orders from './Components/Account/Dashboard/User/Orders/Orders';
 
 const App: React.FC = () => {
-  // initialize AOS 
+  // initialize AOS
   useEffect(() => {
     AOS.init({ offset: 160, duration: 1000, delay: 300 });
   });
@@ -29,6 +33,13 @@ const App: React.FC = () => {
           <Route path='/wishlist' element={<Wishlist />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
+          {/* private dashboard for user  */}
+          <Route path='/dashboard/*' element={<UserPrivateOutlet />}>
+            <Route path='' element={<Dashboard />}>
+              <Route path='' element={<UserHome />} />
+              <Route path='orders' element={<Orders />} />
+            </Route>
+          </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

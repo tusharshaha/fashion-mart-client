@@ -22,28 +22,18 @@ export const order_product = gql`
 export const all_orders_query = gql`
     {
         allOrders{
+            _id
             userEmail
-            userName
-            userPhone
-            company
-            address
-            country
-            city
             date
             status
             payment
-            products{
-                pId
-                pName
-                pPrice
-                pQty
-            }
         }
     }
 `
 export const user_orders_query = gql`
     query getUserOrders($email: String!){
         userOrders(email: $email){
+            _id
             userEmail
             userName
             userPhone
@@ -54,6 +44,8 @@ export const user_orders_query = gql`
             date
             status
             payment
+            totalAmount
+            totalQty
             products{
                 pId
                 pName

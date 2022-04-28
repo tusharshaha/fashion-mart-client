@@ -8,7 +8,7 @@ const Downloads: React.FC = () => {
     const files: files[] = [
         { product: "Fashion Mart - E-Commerce", date: "April 30, 2022", link: "" },
         { product: "Kino - E-Commerce", date: "March 17, 2022", link: "" },
-        { product: "Kids Toy - E-Commerce", date: "Agust 23, 2021", link: "" },
+        { product: "Kids Toy - E-Commerce", date: "August 23, 2021", link: "" },
     ]
     return (
         <div>

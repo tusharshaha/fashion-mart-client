@@ -16,11 +16,20 @@ export interface order {
 }
 
 export interface orderedProduct {
+    _id: string,
     userEmail: string,
+    userName: string,
+    userPhone: string,
+    company: string,
+    address: string,
+    country: string,
+    city: string,
     date: string,
     status: string,
-    payment: string
-    products: order[],
+    payment: string,
+    totalAmount: number,
+    totalQty: number,
+    products: order[]
 }
 
 export interface wishlistType {

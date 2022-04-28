@@ -1,4 +1,4 @@
-import request, { GraphQLClient } from 'graphql-request';
+import request from 'graphql-request';
 import React, { useEffect, useState } from 'react';
 import { GRAPHQL_URL } from '../../../../../util/BaseUrl';
 import { orderedProduct } from '../../../../../util/types';
@@ -21,7 +21,7 @@ const Orders: React.FC = () => {
                     })
                 })
         })()
-    }, [token])
+    }, [token, email])
     return (
         <div>
             <h4 className="mb-3">Orders</h4>
@@ -40,6 +40,15 @@ const Orders: React.FC = () => {
                         {orders.length === 0 && <tr>
                             <td colSpan={5} className='py-5 text-center'>You Currenly haven't any order</td>
                         </tr>}
+                        {
+                            orders.map(((ele, i) => <tr key={ele._id}>
+                                <td>{i + 1}</td>
+                                <td>{ele.date}</td>
+                                <td>{ele.status}</td>
+                                <td>{`&#36;${ele.totalAmount} for ${ele.totalQty} item`}</td>
+                                <td>{ele.status}</td>
+                            </tr>))
+                        }
                     </tbody>
                 </table>
             </div>

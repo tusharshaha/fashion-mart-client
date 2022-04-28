@@ -32,7 +32,7 @@ export const all_orders_query = gql`
             date
             status
             payment
-            products: {
+            products{
                 pId
                 pName
                 pPrice
@@ -54,7 +54,7 @@ export const user_orders_query = gql`
             date
             status
             payment
-            products: {
+            products{
                 pId
                 pName
                 pPrice

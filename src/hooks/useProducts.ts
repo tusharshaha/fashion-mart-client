@@ -7,8 +7,10 @@ import { productType } from "../util/types";
 export const useProducts: () => ({ products: productType[] }) = () => {
     const [products, setProducts] = useState<productType[]>([]);
     useEffect(() => {
-        request<{ products: productType[] }>(GRAPHQL_URL, product_query)
-            .then(data => setProducts(data.products))
+        (async () => {
+            await request<{ products: productType[] }>(GRAPHQL_URL, product_query)
+                .then(data => setProducts(data.products))
+        })()
     }, [])
     return { products }
 }

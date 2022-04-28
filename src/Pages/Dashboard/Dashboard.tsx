@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { Link, NavLink, Outlet } from 'react-router-dom';
-import account_banner from '../../../../assets/images/account_banner.jpg';
-import { removeUser } from '../../../../redux/features/userAuthSlice';
-import { AppDispatch } from '../../../../redux/store';
-import Footer from '../../../Common/Footer/Footer';
-import NavBar from '../../../Common/NavBar/NavBar';
+import {NavLink, Outlet } from 'react-router-dom';
+import dash_banner from '../../assets/images/account_banner.jpg';
+import { removeUser } from '../../redux/features/userAuthSlice';
+import { AppDispatch } from '../../redux/store';
+import Footer from '../../Components/Common/Footer/Footer';
+import NavBar from '../../Components/Common/NavBar/NavBar';
 import './Dashboard.css';
 
 const Dashboard: React.FC = () => {
@@ -15,7 +15,7 @@ const Dashboard: React.FC = () => {
         <>
             <NavBar></NavBar>
             <div className='banner'>
-                <img src={account_banner} alt="" />
+                <img src={dash_banner} alt="" />
             </div>
             <Container className='py-5'>
                 <div className='dash_layout'>
@@ -42,7 +42,7 @@ const Dashboard: React.FC = () => {
                         >Account Details</NavLink>
                         <button onClick={() => dispatch(removeUser())}>Logout</button>
                     </div>
-                    <div>
+                    <div className='outlet_container'>
                         <Outlet />
                     </div>
                 </div>

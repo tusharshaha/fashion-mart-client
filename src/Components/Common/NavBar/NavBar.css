@@ -92,6 +92,13 @@
     transition: 0.3s;
 }
 
+.activeLink::after {
+    content: '' !important;
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background-color: #fff !important;
+}
 
 .nav_list li a:hover::after,
 .toggle_nav_list li a:hover::after {

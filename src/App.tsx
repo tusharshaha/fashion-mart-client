@@ -11,10 +11,11 @@ import About from './Pages/About/About';
 import Account from './Pages/Account/Account';
 import Cart from './Pages/Cart/Cart';
 import Wishlist from './Pages/Wishlist/Wishlist';
-import Dashboard from './Components/Account/Dashboard/Dashboard/Dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import UserHome from './Components/Account/Dashboard/User/UserHome/UserHome';
 import UserPrivateOutlet from './UserPrivateOutlet/UserPrivateOutlet';
 import Orders from './Components/Account/Dashboard/User/Orders/Orders';
+import Downloads from './Components/Account/Dashboard/User/Downloads/Downloads';
 
 const App: React.FC = () => {
   // initialize AOS
@@ -38,6 +39,7 @@ const App: React.FC = () => {
             <Route path='' element={<Dashboard />}>
               <Route path='' element={<UserHome />} />
               <Route path='orders' element={<Orders />} />
+              <Route path='downloads' element={<Downloads />} />
             </Route>
           </Route>
           <Route path='*' element={<NotFound />} />

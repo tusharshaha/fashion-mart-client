@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CgClipboard } from 'react-icons/cg';
 import { FaOpencart, FaRegUserCircle } from 'react-icons/fa';
 import { FiMenu } from "react-icons/fi";
@@ -40,38 +40,62 @@ const NavBar: React.FC = () => {
                         <h3 className='logo'>Fashion Mart</h3>
                         <ul style={navMenu} className={`${toggle ? "toggle_nav_list" : "nav_list"}`}>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/home">Home</Link>
+                                <NavLink
+                                    to="/home"
+                                    style={{ color: color ? "black" : "white" }}
+                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                >
+                                    Home
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/shop">Shop</Link>
+                                <NavLink
+                                    to="/shop"
+                                    style={{ color: color ? "black" : "white" }}
+                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                >
+                                    Shop
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/contact">Contact Us</Link>
+                                <NavLink
+                                    to="/contact"
+                                    style={{ color: color ? "black" : "white" }}
+                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                >
+                                    Contact Us
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{ color: color ? "black" : "white" }} to="/about">About Us</Link>
+                                <NavLink
+                                    to="/about"
+                                    style={{ color: color ? "black" : "white" }}
+                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                >
+                                    About Us
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
                     <ul style={navMenu} className={`${toggle ? "toggle_nav_icons" : "nav_icons"}`}>
                         <li>
-                            <Link style={{ color: color ? "black" : "white" }} to="/wishlist">
+                            <NavLink style={{ color: color ? "black" : "white" }} to="/wishlist">
                                 <CgClipboard />
-                            </Link>
+                            </NavLink>
                         </li>
                         <li >
-                            <Link className="cart" style={{ color: color ? "black" : "white" }} to="/cart">
+                            <NavLink className="cart" style={{ color: color ? "black" : "white" }} to="/cart">
                                 <FaOpencart />
                                 <span className="cart_count">{totalCount}</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 style={{ color: color ? "black" : "white" }}
                                 to={email ? "/dashboard" : "/account"}
                             >
                                 <FaRegUserCircle />
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
 

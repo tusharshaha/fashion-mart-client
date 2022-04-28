@@ -20,7 +20,7 @@ export interface orderedProduct {
     userEmail: string,
     userName: string,
     userPhone: string,
-    company: string,
+    company?: string,
     address: string,
     country: string,
     city: string,

@@ -67,6 +67,13 @@ export const single_product_query = gql`
         }
     }
 `
+export const register_user = gql`
+        mutation regiserNewUser($input: registerUserInput!){
+            registerUser(input: $input){
+                register
+            }
+        }
+`
 export const login_user = gql`
     query loginUser($email: String!, $password: String!){
         loginUser(email: $email, password: $password) {
@@ -77,15 +84,11 @@ export const login_user = gql`
         }
     }
 `
-export const register_user = gql`
-    mutation regiserNewUser($input: registerUserInput!){
-        registerUser(input: $input){
-            register
-        }
-    }
-`
 export const update_user = gql`
     mutation regiserNewUser($input: registerUserInput!){
-        updateUserAccount(input: $input)
+        updateUserAccount(input: $input){
+            userName
+            userFullName
+        }
     }
 `

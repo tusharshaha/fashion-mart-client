@@ -2,34 +2,37 @@ import request from 'graphql-request';
 import React, { useState } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { update_user } from '../../../../../graphql/schema';
-import { RootState } from '../../../../../redux/store';
+import { RootState, AppDispatch } from '../../../../../redux/store';
+import { addUser } from '../../../../../redux/features/userAuthSlice';
+import { loginUser } from '../../../../../util/types';
 import { GRAPHQL_URL } from '../../../../../util/BaseUrl';
 
 const EditAccount: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { userName, userFullName, email } = useSelector((state: RootState) => state.authUser.value);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { userName, userFullName, email, role, token } = useSelector((state: RootState) => state.authUser.value);
+    const dispatch = useDispatch<AppDispatch>();
     const handleAccountUpdate = handleSubmit((data) => {
         setLoading(true);
-        request<{ updateUserAccount: boolean }>(GRAPHQL_URL, update_user, { ...data, email })
-            .then(res => {
-                if (res.updateUserAccount) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Successfully Updated Your Account",
-                        showConfirmButton: false,
-                        timer: 1800
-                    })
-                }
-            }).catch(err => {
-                Swal.fire({
-                    icon: "error",
-                    title: err.response.errors[0].message
-                })
-            }).finally(()=> setLoading(false));
+        request<{ updateUserAccount: loginUser }>(GRAPHQL_URL, update_user, { input: { ...data, email } }).then(res => {
+            const { userName, userFullName } = res.updateUserAccount;
+            dispatch(addUser({ userName, userFullName, email, token, role }))
+            Swal.fire({
+                icon: "success",
+                title: "Successfully Updated Your Account",
+                showConfirmButton: false,
+                timer: 1800
+            })
+            reset();
+        }).catch(err => {
+            Swal.fire({
+                icon: "error",
+                title: err.response.errors[0].message
+            })
+        }).finally(() => setLoading(false));
     })
     return (
         <div>

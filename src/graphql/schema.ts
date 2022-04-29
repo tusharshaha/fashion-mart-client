@@ -80,6 +80,7 @@ export const login_user = gql`
             userName
             userFullName
             email
+            role
             token
         }
     }

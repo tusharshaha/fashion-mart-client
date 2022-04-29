@@ -31,3 +31,20 @@
     background-color: #e50808;
     color: white;
 }
+
+@media only screen and (max-width: 770px) {
+    .dash_layout {
+        flex-direction: column;
+    }
+
+    .dashboard_btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .dashboard_btns button,
+    .dashboard_btns a {
+        width: 150px;
+        text-align: center;
+    }
+}

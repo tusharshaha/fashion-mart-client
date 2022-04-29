@@ -22,7 +22,7 @@ const LoginRegister: React.FC = () => {
                 if (res.registerUser.register) {
                     Swal.fire({
                         icon: "success",
-                        title: "Successfully Registerd",
+                        title: "Successfully Registered",
                         text: "Now you can login via your registered email and password",
                     })
                     reset();

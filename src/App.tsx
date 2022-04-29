@@ -17,6 +17,7 @@ import UserPrivateOutlet from './UserPrivateOutlet/UserPrivateOutlet';
 import Orders from './Components/Account/Dashboard/User/Orders/Orders';
 import Downloads from './Components/Account/Dashboard/User/Downloads/Downloads';
 import Address from './Components/Account/Dashboard/User/Address/Address';
+import EditAccount from './Components/Account/Dashboard/User/EditAccount/EditAccount';
 
 const App: React.FC = () => {
   // initialize AOS
@@ -42,6 +43,7 @@ const App: React.FC = () => {
               <Route path='orders' element={<Orders />} />
               <Route path='downloads' element={<Downloads />} />
               <Route path='address' element={<Address />} />
+              <Route path='account-details' element={<EditAccount />} />
             </Route>
           </Route>
           <Route path='*' element={<NotFound />} />

@@ -84,3 +84,8 @@ export const register_user = gql`
         }
     }
 `
+export const update_user = gql`
+    mutation regiserNewUser($input: registerUserInput!){
+        updateUserAccount(input: $input)
+    }
+`

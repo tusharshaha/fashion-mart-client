@@ -1,11 +1,17 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 import './Address.css';
 
 const Address: React.FC = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const handleAddress = handleSubmit((data) => {
+        Swal.fire({
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1800
+        })
         reset();
     })
     return (

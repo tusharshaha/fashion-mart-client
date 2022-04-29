@@ -77,7 +77,7 @@ const LoginRegister: React.FC = () => {
                                     {errors.password && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                                 </div>
                                 <div className='text-end'>
-                                    <button className="account_btn">Register</button>
+                                    <button type='submit' className="account_btn">Register</button>
                                 </div>
                             </form>
                         </div>

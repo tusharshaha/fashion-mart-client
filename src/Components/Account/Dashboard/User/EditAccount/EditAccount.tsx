@@ -32,20 +32,29 @@ const EditAccount: React.FC = () => {
                 </div>
                 <div className="pdts_input">
                     <label>Your Email</label>
-                    <Form.Control type="email" value={email} disabled />
+                    <Form.Control
+                        type="email"
+                        value={email} disabled
+                    />
                 </div>
                 <div className="pdts_input">
                     <label>Old Password</label>
-                    <Form.Control type="password" {...register("oldP", { required: true, minLength: 6 })} />
+                    <Form.Control
+                        type="password"
+                        {...register("oldP", { required: true, minLength: 6 })}
+                    />
                     {errors.oldP && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                 </div>
                 <div className="pdts_input">
                     <label>Current Password</label>
-                    <Form.Control type="password" {...register("curP", { required: true, minLength: 6 })} />
+                    <Form.Control
+                        type="password"
+                        {...register("curP", { required: true, minLength: 6 })}
+                    />
                     {errors.curP && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                 </div>
                 <div className='text-end'>
-                    <button className="product_btn px-4">Update</button>
+                    <button type='submit' className="product_btn px-4">Update</button>
                 </div>
             </form>
         </div>

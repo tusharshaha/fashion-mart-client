@@ -6,6 +6,7 @@ import { user_orders_query } from '../../../../../graphql/schema';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import Swal from 'sweetalert2';
+import { Button } from 'react-bootstrap';
 
 const Orders: React.FC = () => {
     const [orders, setOrders] = useState<orderedProduct[]>([]);
@@ -46,7 +47,7 @@ const Orders: React.FC = () => {
                                 <td>{ele.date}</td>
                                 <td>{ele.status}</td>
                                 <td>{`&#36;${ele.totalAmount} for ${ele.totalQty} item`}</td>
-                                <td>{ele.status}</td>
+                                <td><Button variant="dark" size='sm'>Cancel</Button></td>
                             </tr>))
                         }
                     </tbody>

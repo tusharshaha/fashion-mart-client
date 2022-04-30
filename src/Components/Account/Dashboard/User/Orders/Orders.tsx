@@ -1,28 +1,11 @@
-import request from 'graphql-request';
-import React, { useEffect, useState } from 'react';
-import { GRAPHQL_URL } from '../../../../../util/BaseUrl';
-import { orderedProduct } from '../../../../../util/types';
-import { user_orders_query } from '../../../../../graphql/schema';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../../../redux/store';
-import Swal from 'sweetalert2';
+import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { useOrders } from '../../../../../hooks/useOrders';
 
 const Orders: React.FC = () => {
-    const [orders, setOrders] = useState<orderedProduct[]>([]);
-    const { token, email } = useSelector((state: RootState) => state.authUser.value)
-    useEffect(() => {
-        (async () => {
-            await request<{ userOrders: orderedProduct[] }>(GRAPHQL_URL, user_orders_query, { email: email })
-                .then(res => setOrders(res.userOrders))
-                .catch(err => {
-                    Swal.fire({
-                        icon: "error",
-                        title: err.response.errors[0].message
-                    })
-                })
-        })()
-    }, [token, email])
+    const navigate = useNavigate();
+    const { orders } = useOrders();
     return (
         <div>
             <h4 className="mb-3">Orders</h4>
@@ -52,6 +35,7 @@ const Orders: React.FC = () => {
                                         variant="secondary"
                                         size='sm'
                                         className="me-2"
+                                        onClick={() => navigate(`/dashboard/orders/${ele._id}`)}
                                     >
                                         View
                                     </Button>
@@ -67,7 +51,7 @@ const Orders: React.FC = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 

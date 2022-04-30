@@ -9,10 +9,12 @@ export interface productType {
 }
 
 export interface order {
-    pId: string
-    pName: string
-    pPrice: number
-    pQty: number
+    id: string,
+    img: string,
+    name: string,
+    curPrice: number,
+    subTotal: number,
+    qty: number
 }
 
 export interface orderedProduct {
@@ -30,6 +32,15 @@ export interface orderedProduct {
     totalAmount: number,
     totalQty: number,
     products: order[]
+}
+
+export interface cartType {
+    id: string,
+    img: string,
+    name: string,
+    curPrice: number,
+    subTotal: number,
+    qty: number
 }
 
 export interface wishlistType {

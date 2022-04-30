@@ -1,15 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { cartType } from "../../util/types";
 
-interface cart {
-    id: string,
-    img: string,
-    name: string,
-    curPrice: number,
-    subTotal: number,
-    qty: number
-}
 interface init {
-    items: cart[],
+    items: cartType[],
     totalCount: number,
     totalAmount: number
 }
@@ -27,7 +20,7 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        addToCart: (state, action: PayloadAction<cart>) => {
+        addToCart: (state, action: PayloadAction<cartType>) => {
             const findOldProduct = state.items.find(ele => ele.id === action.payload.id);
             if (!findOldProduct) {
                 const updatedSubTotal = action.payload.qty * action.payload.curPrice;

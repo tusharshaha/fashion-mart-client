@@ -1,0 +1,23 @@
+.chekout_img {
+    position: relative;
+    border: 1px solid #b6b4b4;
+    border-radius: 10px;
+    width: 70px;
+    margin-right: 10px;
+}
+.chekout_img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.cp_qty{
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}

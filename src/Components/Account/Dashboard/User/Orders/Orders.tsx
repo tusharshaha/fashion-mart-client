@@ -46,8 +46,22 @@ const Orders: React.FC = () => {
                                 <td>{i + 1}</td>
                                 <td>{ele.date}</td>
                                 <td>{ele.status}</td>
-                                <td>{`&#36;${ele.totalAmount} for ${ele.totalQty} item`}</td>
-                                <td><Button variant="dark" size='sm'>Cancel</Button></td>
+                                <td>&#36;{`${ele.totalAmount}.00 for ${ele.totalQty} item`}</td>
+                                <td>
+                                    <Button
+                                        variant="secondary"
+                                        size='sm'
+                                        className="me-2"
+                                    >
+                                        View
+                                    </Button>
+                                    <Button
+                                        variant="danger"
+                                        size='sm'
+                                    >
+                                        Cancel
+                                    </Button>
+                                </td>
                             </tr>))
                         }
                     </tbody>

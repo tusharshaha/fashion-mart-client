@@ -14,6 +14,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import UserHome from './Components/Account/Dashboard/User/UserHome/UserHome';
 import UserPrivateOutlet from './UserPrivateOutlet/UserPrivateOutlet';
 import Orders from './Components/Account/Dashboard/User/Orders/Orders';
+import OrderDetails from './Components/Account/Dashboard/User/Orders/OrderDetails';
 import Downloads from './Components/Account/Dashboard/User/Downloads/Downloads';
 import Address from './Components/Account/Dashboard/User/Address/Address';
 import EditAccount from './Components/Account/Dashboard/User/EditAccount/EditAccount';
@@ -21,6 +22,7 @@ import AdminPrivateOutlet from './AdminPrivateOutlet/AdminPrivateOutlet';
 import './App.css'
 import ManageOrder from './Components/Account/Dashboard/Admin/ManageOrder/ManageOrder';
 import ManageUser from './Components/Account/Dashboard/Admin/ManageUser/ManageUser';
+import Checkout from './Pages/Checkout/Checkout';
 
 const App: React.FC = () => {
   // initialize AOS
@@ -38,17 +40,20 @@ const App: React.FC = () => {
           <Route path='/about' element={<About />} />
           <Route path='/wishlist' element={<Wishlist />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='/account' element={<Account />} />
           {/* private dashboard for user  */}
           <Route path='/dashboard/*' element={<UserPrivateOutlet />}>
             <Route path='' element={<Dashboard />}>
               <Route path='' element={<UserHome />} />
               <Route path='orders' element={<Orders />} />
+              <Route path='/order/:orderId' element={<OrderDetails />} />
               <Route path='downloads' element={<Downloads />} />
               <Route path='address' element={<Address />} />
               <Route path='account-details' element={<EditAccount />} />
             </Route>
           </Route>
+          {/* private dashboard for admin  */}
           <Route path='/dashboard/*' element={<AdminPrivateOutlet />}>
             <Route path='' element={<Dashboard />}>
               <Route path='manage-order' element={<ManageOrder />} />

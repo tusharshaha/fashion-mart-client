@@ -47,10 +47,12 @@ export const user_orders_query = gql`
             totalAmount
             totalQty
             products{
-                pId
-                pName
-                pPrice
-                pQty
+                id
+                img
+                name
+                curPrice
+                subTotal
+                qty
             }
         }
     }

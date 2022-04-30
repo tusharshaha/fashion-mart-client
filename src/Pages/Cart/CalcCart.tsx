@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const CalcCart: React.FC<{ total: number }> = ({ total }) => {
+    const navigate = useNavigate();
     return (
         <div className='calc_cart'>
             <h4>Cart Totals</h4>
@@ -28,7 +30,12 @@ const CalcCart: React.FC<{ total: number }> = ({ total }) => {
                     <p>&#36;{total}.00</p>
                 </div>
                 <div className='text-end'>
-                    <Button variant="danger">Procced To Checkout</Button>
+                    <Button
+                        onClick={() => navigate("/checkout")}
+                        variant="danger"
+                    >
+                        Procced To Checkout
+                    </Button>
                 </div>
             </div>
         </div>

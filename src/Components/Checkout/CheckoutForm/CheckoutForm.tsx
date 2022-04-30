@@ -116,6 +116,13 @@ const CheckoutForm: React.FC = () => {
                     </div>
                     <div>
                         <Form.Control
+                            {...register("company")}
+                            className="py-2"
+                            placeholder="Company Name"
+                        />
+                    </div>
+                    <div>
+                        <Form.Control
                             {...register("userPhone", { required: true, minLength: 11 })}
                             className="py-2"
                             placeholder="Your Phone Number"

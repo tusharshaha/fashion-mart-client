@@ -60,9 +60,11 @@ export interface loginUser {
 }
 
 export interface registerUser {
+    _id: string,
     userName: string,
     userFullName: string,
     email: string,
     password: string,
+    role: string,
     register?: boolean
 }

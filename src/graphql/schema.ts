@@ -100,11 +100,32 @@ export const login_user = gql`
         }
     }
 `
+export const get_all_user = gql`
+    {
+        allUsers{
+            _id
+            userName
+            email
+            role
+        }
+    }
+`
+
 export const update_user = gql`
     mutation regiserNewUser($input: registerUserInput!){
         updateUserAccount(input: $input){
             userName
             userFullName
         }
+    }
+`
+export const update_user_role = gql`
+    mutation updateUserRole($email: String!, $role: String!){
+        updateUserRole(email: $email, role: $role)
+    }
+`
+export const delete_user = gql`
+    mutation deleteUser($email: String!){
+        deleteUser(email: $email)
     }
 `

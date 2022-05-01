@@ -22,7 +22,7 @@ const Login: React.FC = () => {
                 dispatch(addUser(res.loginUser));
                 Swal.fire({
                     icon: "success",
-                    title: "Succesfully Login",
+                    title: "Successfully Login",
                     timer: 1800,
                     showConfirmButton: false
                 })

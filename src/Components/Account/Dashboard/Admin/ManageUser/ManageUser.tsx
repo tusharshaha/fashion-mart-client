@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../../../../../util/types';
+import { registerUser } from '../../../../../utils/types';
 
 const ManageUser: React.FC = () => {
     const [users, setUsers] = useState<registerUser[]>([]);

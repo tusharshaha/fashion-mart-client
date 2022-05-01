@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import { order_product } from '../../../graphql/schema';
 import { clearCart } from '../../../redux/features/cartSlice';
 import { AppDispatch, RootState } from '../../../redux/store';
-import { GRAPHQL_URL } from '../../../util/BaseUrl';
+import { GRAPHQL_URL } from '../../../utils/BaseUrl';
 import CheckoutProducts from '../ChecoutProuducts/CheckoutProducts';
 import './CheckoutForm.css';
 

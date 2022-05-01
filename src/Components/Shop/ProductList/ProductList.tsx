@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { productType } from '../../../util/types';
+import { productType } from '../../../utils/types';
 import { BsFillSuitHeartFill, BsEyeFill } from "react-icons/bs";
 import "./ProductList.css";
 import { useDispatch } from 'react-redux';

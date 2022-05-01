@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Col } from 'react-bootstrap';
-import { productType } from '../../../util/types';
+import { productType } from '../../../utils/types';
 import { FaRegHeart } from "react-icons/fa";
 import { MdAddShoppingCart, MdSearch } from "react-icons/md"
 import { useDispatch } from 'react-redux';

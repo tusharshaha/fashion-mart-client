@@ -7,8 +7,8 @@ import Swal from 'sweetalert2';
 import { update_user } from '../../../../../graphql/schema';
 import { RootState, AppDispatch } from '../../../../../redux/store';
 import { addUser } from '../../../../../redux/features/userAuthSlice';
-import { loginUser } from '../../../../../util/types';
-import { GRAPHQL_URL } from '../../../../../util/BaseUrl';
+import { loginUser } from '../../../../../utils/types';
+import { GRAPHQL_URL } from '../../../../../utils/BaseUrl';
 
 const EditAccount: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);

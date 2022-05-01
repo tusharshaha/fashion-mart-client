@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
-import { orderedProduct } from '../../../../../util/types';
+import { orderedProduct } from '../../../../../utils/types';
 
 const ManageOrder: React.FC = () => {
     const [orders, setOrders] = useState<orderedProduct[]>([]);

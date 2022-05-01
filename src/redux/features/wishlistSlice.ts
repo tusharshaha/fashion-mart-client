@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Swal from "sweetalert2";
-import { wishlistType } from "../../util/types";
+import { wishlistType } from "../../utils/types";
 
 const initialState: { items: wishlistType[] } = {
     items: []

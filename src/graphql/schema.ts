@@ -69,6 +69,13 @@ export const single_product_query = gql`
         }
     }
 `
+
+export const delete_order = gql`
+    mutation deleteOrder($id: ID!){
+        deleteOrder(id: $id)
+    }
+`
+
 export const register_user = gql`
         mutation regiserNewUser($input: registerUserInput!){
             registerUser(input: $input){

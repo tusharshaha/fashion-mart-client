@@ -12,13 +12,13 @@ import Cart from './Pages/Cart/Cart';
 import Wishlist from './Pages/Wishlist/Wishlist';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import UserHome from './Components/Account/Dashboard/User/UserHome/UserHome';
-import UserPrivateOutlet from './UserPrivateOutlet/UserPrivateOutlet';
+import UserPrivateOutlet from './Routes/UserPrivateOutlet/UserPrivateOutlet';
 import Orders from './Components/Account/Dashboard/User/Orders/Orders';
 import OrderDetails from './Components/Account/Dashboard/User/Orders/OrderDetails';
 import Downloads from './Components/Account/Dashboard/User/Downloads/Downloads';
 import Address from './Components/Account/Dashboard/User/Address/Address';
 import EditAccount from './Components/Account/Dashboard/User/EditAccount/EditAccount';
-import AdminPrivateOutlet from './AdminPrivateOutlet/AdminPrivateOutlet';
+import AdminPrivateOutlet from './Routes/AdminPrivateOutlet/AdminPrivateOutlet';
 import './App.css'
 import ManageOrder from './Components/Account/Dashboard/Admin/ManageOrder/ManageOrder';
 import ManageUser from './Components/Account/Dashboard/Admin/ManageUser/ManageUser';

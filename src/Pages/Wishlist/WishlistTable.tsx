@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { addToCart, getTotal } from '../../redux/features/cartSlice';
 import { removeFromWishlist } from '../../redux/features/wishlistSlice';
 import { AppDispatch, RootState } from '../../redux/store';
-import { wishlistType } from '../../util/types';
+import { wishlistType } from '../../utils/types';
 
 const WishlistTable: React.FC = () => {
     const { items } = useSelector((state: RootState) => state.wishlist);

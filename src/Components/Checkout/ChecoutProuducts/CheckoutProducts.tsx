@@ -1,5 +1,5 @@
 import React from 'react';
-import { cartType } from '../../../util/types';
+import { cartType } from '../../../utils/types';
 import './CheckoutProducts.css';
 
 interface props {

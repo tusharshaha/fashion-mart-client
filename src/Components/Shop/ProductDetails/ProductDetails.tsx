@@ -1,7 +1,7 @@
 import React, { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import { Form, Modal } from 'react-bootstrap';
 import { useProducts } from '../../../hooks/useProducts';
-import { productType } from '../../../util/types';
+import { productType } from '../../../utils/types';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { addToCart, getTotal } from '../../../redux/features/cartSlice';

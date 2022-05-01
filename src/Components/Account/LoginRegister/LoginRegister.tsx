@@ -5,10 +5,10 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import Login from './Login';
 import { GraphQLClient } from 'graphql-request';
-import { GRAPHQL_URL } from '../../../util/BaseUrl';
+import { GRAPHQL_URL } from '../../../utils/BaseUrl';
 import { register_user } from '../../../graphql/schema';
 import Swal from 'sweetalert2';
-import { registerUser } from '../../../util/types';
+import { registerUser } from '../../../utils/types';
 import "./LoginRegister.css";
 
 const LoginRegister: React.FC = () => {

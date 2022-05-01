@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { user_orders_query } from "../graphql/schema";
 import { RootState } from "../redux/store";
-import { GRAPHQL_URL } from "../util/BaseUrl";
-import { orderedProduct } from "../util/types";
+import { GRAPHQL_URL } from "../utils/BaseUrl";
+import { orderedProduct } from "../utils/types";
 
-export const useOrders: () => ({ orders: orderedProduct[] }) = () => {
+export const useOrders: (update?: boolean) => ({ orders: orderedProduct[] }) = (update) => {
     const [orders, setOrders] = useState<orderedProduct[]>([]);
     const { token, email } = useSelector((state: RootState) => state.authUser.value);
     useEffect(() => {
@@ -21,6 +21,6 @@ export const useOrders: () => ({ orders: orderedProduct[] }) = () => {
                     })
                 })
         })()
-    }, [token, email])
+    }, [token, email, update])
     return { orders }
 }

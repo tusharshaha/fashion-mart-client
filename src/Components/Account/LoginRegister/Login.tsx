@@ -7,8 +7,8 @@ import Swal from 'sweetalert2';
 import { login_user } from '../../../graphql/schema';
 import { addUser } from '../../../redux/features/userAuthSlice';
 import { AppDispatch } from '../../../redux/store';
-import { GRAPHQL_URL } from '../../../util/BaseUrl';
-import { loginUser } from '../../../util/types';
+import { GRAPHQL_URL } from '../../../utils/BaseUrl';
+import { loginUser } from '../../../utils/types';
 
 const Login: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);

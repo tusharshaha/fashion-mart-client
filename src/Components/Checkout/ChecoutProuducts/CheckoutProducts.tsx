@@ -9,7 +9,7 @@ interface props {
 
 const CheckoutProducts: React.FC<props> = ({ items, totalAmount }) => {
     return (
-        <div>
+        <div className='checkout_product'>
             {
                 items.map(item => <div key={item.id} className="d-flex align-items-center justify-content-between mb-2">
                     <div className='d-flex align-items-center'>

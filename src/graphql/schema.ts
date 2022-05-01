@@ -26,6 +26,8 @@ export const all_orders_query = gql`
             userEmail
             date
             status
+            totalAmount
+            totalQty
             payment
         }
     }
@@ -69,7 +71,11 @@ export const single_product_query = gql`
         }
     }
 `
-
+export const change_order_status = gql`
+    mutation changeOrderStatus ($id: ID!, $status: String!){
+        changeOrderStatus(id: $id, status: $status)
+    }
+`
 export const delete_order = gql`
     mutation deleteOrder($id: ID!){
         deleteOrder(id: $id)

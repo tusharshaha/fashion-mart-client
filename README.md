@@ -11,6 +11,7 @@
 * On the orders page user can view their order and order details and he/she can cancel their order. And on the account details page user can update their account information
 * As an admin there will visible two extra menu named manage order, manage user.
 * On the manage order page admin can manage all user order can change order status and can delete any order.
-* On the manage user page admin can view all user. Their he/she can delete any order and can make a new admin by changing the user role.* On the manage user page there will be two different menu one for view normal user and another one for view admin
+* On the manage user page admin can view all user. Their he/she can delete any order and can make a new admin by changing the user role.
+* On the manage user page there will be two different menu one for view normal user and another one for view admin
 
 #### Techchnology: ReactJs, Typescript, Redux-toolkit, Graphql, ExpressJs, NodeJs, MongoDB, JWT

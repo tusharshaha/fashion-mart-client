@@ -26,6 +26,12 @@ const ManageUser: React.FC = () => {
             setLoading(true);
             await client.request<{ allUsers: registerUser[] }>(get_all_user)
                 .then(res => { setUsers(res.allUsers) })
+                .catch(err => {
+                    Swal.fire({
+                        icon: "error",
+                        title: err.response.errors[0].message
+                    })
+                })
                 .finally(() => setLoading(false));
         })()
         // eslint-disable-next-line

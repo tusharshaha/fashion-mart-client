@@ -26,6 +26,11 @@ const ManageOrder: React.FC = () => {
             await client.request<{ allOrders: orderedProduct[] }>(all_orders_query)
                 .then(res => {
                     setOrders(res.allOrders)
+                }).catch(err => {
+                    Swal.fire({
+                        icon: "error",
+                        title: err.response.errors[0].message
+                    })
                 }).finally(() => setLoading(false))
         })()
         // eslint-disable-next-line

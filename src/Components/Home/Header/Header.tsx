@@ -5,7 +5,7 @@ import './Header.css';
 const Header: React.FC = () => {
     const navigate = useNavigate()
     return (
-        <Carousel interval={null} id='top'>
+        <Carousel interval={null}>
             <Carousel.Item>
                 <div className='slider1'>
                     <Container>

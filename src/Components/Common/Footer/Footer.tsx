@@ -8,6 +8,12 @@ import { BiArrowToTop } from 'react-icons/bi';
 
 const Footer: React.FC = () => {
     const [topClass, setTopClass] = useState("d-none")
+    const handleGoTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
     const goTopHandler = () => {
         if (window.scrollY >= 500) {
             setTopClass("")
@@ -45,11 +51,9 @@ const Footer: React.FC = () => {
                 </div>
             </Container>
             {/* go to top button  */}
-            <a href="#top">
-                <button className={`${topClass} go_top`}>
-                    <BiArrowToTop />
-                </button>
-            </a>
+            <button onClick={handleGoTop} className={`${topClass} go_top`}>
+                <BiArrowToTop />
+            </button>
         </div>
     );
 };

@@ -1,1 +1,1 @@
-export const GRAPHQL_URL = "https://mysterious-inlet-90493.herokuapp.com/graphql";
+export const GRAPHQL_URL = "https://fashion-mart-server.vercel.app/graphql";

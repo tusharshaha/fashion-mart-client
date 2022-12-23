@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { CgClipboard } from 'react-icons/cg';
@@ -31,7 +31,10 @@ const NavBar: React.FC = () => {
         backgroundColor: !toggle ? 'transparent' : toggle && color ? "#ffffffe6" : "#0000ff3b",
         color: color ? "black" : "white",
     }
-    window.addEventListener('scroll', changeColor);
+    useEffect(() => {
+        window.addEventListener('scroll', changeColor);
+        return () => window.removeEventListener('scroll', changeColor);
+    }, [])
     return (
         <div style={navbarStyle} className='navbar'>
             <Container>
@@ -43,7 +46,7 @@ const NavBar: React.FC = () => {
                                 <NavLink
                                     to="/home"
                                     style={{ color: color ? "black" : "white" }}
-                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                    className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Home
                                 </NavLink>
@@ -52,7 +55,7 @@ const NavBar: React.FC = () => {
                                 <NavLink
                                     to="/shop"
                                     style={{ color: color ? "black" : "white" }}
-                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                    className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Shop
                                 </NavLink>
@@ -61,7 +64,7 @@ const NavBar: React.FC = () => {
                                 <NavLink
                                     to="/contact"
                                     style={{ color: color ? "black" : "white" }}
-                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                    className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Contact Us
                                 </NavLink>
@@ -70,7 +73,7 @@ const NavBar: React.FC = () => {
                                 <NavLink
                                     to="/about"
                                     style={{ color: color ? "black" : "white" }}
-                                    className={({isActive}) => (isActive ? 'activeLink' : '')}
+                                    className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     About Us
                                 </NavLink>

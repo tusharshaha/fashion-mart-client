@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoMail } from "react-icons/go";
 import { FaFacebookF, FaTwitter, FaYoutube, FaGoogle, FaInstagram } from "react-icons/fa";
 import payment from "../../../assets/images/payment.png";
@@ -21,7 +21,10 @@ const Footer: React.FC = () => {
             setTopClass("d-none");
         }
     }
-    window.addEventListener('scroll', goTopHandler);
+    useEffect(()=>{
+        window.addEventListener('scroll', goTopHandler);
+        return ()=> window.removeEventListener('scroll', goTopHandler);
+    },[])
 
     return (
         <div className='footer'>

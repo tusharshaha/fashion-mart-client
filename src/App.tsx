@@ -2,36 +2,19 @@ import React, { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home/Home';
-import Shop from './Pages/Shop/Shop';
-import NotFound from './Pages/NotFound/NotFound';
-import ContactUs from './Pages/ContactUs/ContactUs';
-import About from './Pages/About/About';
-import Account from './Pages/Account/Account';
-import Cart from './Pages/Cart/Cart';
-import Wishlist from './Pages/Wishlist/Wishlist';
-import Dashboard from './Pages/Dashboard/Dashboard';
-import UserHome from './Components/Account/Dashboard/User/UserHome/UserHome';
-import UserPrivateOutlet from './Routes/UserPrivateOutlet/UserPrivateOutlet';
-import Orders from './Components/Account/Dashboard/User/Orders/Orders';
-import OrderDetails from './Components/Account/Dashboard/User/Orders/OrderDetails';
-import Downloads from './Components/Account/Dashboard/User/Downloads/Downloads';
-import Address from './Components/Account/Dashboard/User/Address/Address';
-import EditAccount from './Components/Account/Dashboard/User/EditAccount/EditAccount';
-import AdminPrivateOutlet from './Routes/AdminPrivateOutlet/AdminPrivateOutlet';
+import { About, Account, Address, AdminPrivateOutlet, Cart, Checkout, ContactUs, Dashboard, Downloads, EditAccount, Home, ManageOrder, ManageUser, NotFound, OrderDetails, Orders, Shop, UserHome, UserPrivateOutlet, Wishlist } from './Routes';
 import './App.css'
-import ManageOrder from './Components/Account/Dashboard/Admin/ManageOrder/ManageOrder';
-import ManageUser from './Components/Account/Dashboard/Admin/ManageUser/ManageUser';
-import Checkout from './Pages/Checkout/Checkout';
+import ScrollToTop from './utils/ScrollToTop';
 
 const App: React.FC = () => {
   // initialize AOS
   useEffect(() => {
-    AOS.init({ offset: 160, duration: 1000, delay: 300 });
-  });
+    AOS.init({ offset: 160, duration: 1000, delay: 300, once: true });
+  }, []);
   return (
     <div className='App'>
       <BrowserRouter>
+          <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />

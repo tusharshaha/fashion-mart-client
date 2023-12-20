@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     return (
         <div className='footer'>
             <Container>
-                <h2 className='text-uppercase title_mark'>Latest Blogs</h2>
+                <h2 className='text-uppercase title_mark fw-bold'>Latest Blogs</h2>
                 <p className="text-gray">Get updates by subscribe our weekly newsletter</p>
                 <div className="d-flex justify-content-center align-items-center mt-4">
                     <div className='sub_input'>

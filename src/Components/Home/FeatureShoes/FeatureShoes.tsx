@@ -10,7 +10,7 @@ const FeaturedProduct: React.FC = () => {
     return (
         <Container className="py-5">
             <div className='text-center'>
-                <h2 className='text-uppercase title_mark'>Featured Product</h2>
+                <h2 className='text-uppercase title_mark fw-bold'>Featured Product</h2>
                 <Link to="/shop" className='
                     text-uppercase
                     fw-bold

@@ -28,7 +28,7 @@ const ShortDetails: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className='fw-bold mb-1'>{dt.title}</p>
-                                    <p className='mb-0'>{dt.subTitle}</p>
+                                    <p className='mb-0 text-secondary'>{dt.subTitle}</p>
                                 </div>
                             </div>
                         </Col>)

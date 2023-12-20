@@ -45,7 +45,7 @@ const NavBar: React.FC = () => {
                             <li>
                                 <NavLink
                                     to="/home"
-                                    style={{ color: color ? "black" : "white" }}
+                                    style={{ color: color ? "black" : "white", fontWeight: 600 }}
                                     className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Home
@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
                             <li>
                                 <NavLink
                                     to="/shop"
-                                    style={{ color: color ? "black" : "white" }}
+                                    style={{ color: color ? "black" : "white", fontWeight: 600 }}
                                     className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Shop
@@ -63,7 +63,7 @@ const NavBar: React.FC = () => {
                             <li>
                                 <NavLink
                                     to="/contact"
-                                    style={{ color: color ? "black" : "white" }}
+                                    style={{ color: color ? "black" : "white", fontWeight: 600 }}
                                     className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     Contact Us
@@ -72,7 +72,7 @@ const NavBar: React.FC = () => {
                             <li>
                                 <NavLink
                                     to="/about"
-                                    style={{ color: color ? "black" : "white" }}
+                                    style={{ color: color ? "black" : "white", fontWeight: 600 }}
                                     className={({ isActive }) => (isActive ? 'activeLink' : '')}
                                 >
                                     About Us

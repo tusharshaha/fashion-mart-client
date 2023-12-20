@@ -72,7 +72,7 @@ const Product: React.FC<props> = ({ product, anim }) => {
                         </button>
                     </div>
                 </div>
-                <h5>{product.name}</h5>
+                <h5 className='fw-bold'>{product.name}</h5>
                 <p className="text-capitalize">
                     <em className='me-2'><b>Category:</b></em>
                     {product.category}

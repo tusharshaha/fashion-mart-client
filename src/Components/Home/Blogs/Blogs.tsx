@@ -20,7 +20,7 @@ const Blogs: React.FC = () => {
     return (
         <Container className="py-5">
             <div className='text-center'>
-                <h2 className='text-uppercase title_mark'>Latest Blogs</h2>
+                <h2 className='text-uppercase title_mark fw-bold'>Latest Blogs</h2>
                 <p className='text-decoration-underline fw-bold'>VIEW ALL POSTS</p>
             </div>
             <Row xs={1} lg={3} className="g-3 mt-4">

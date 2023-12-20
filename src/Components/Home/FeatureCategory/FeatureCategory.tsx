@@ -21,16 +21,16 @@ const ShortCategory: React.FC = () => {
     ]
     return (
         <Container className="py-5">
-            <Row xs={1} md={2} lg={4} className='g-3'>
+            <Row xs={1} md={2} lg={4} className='g-4'>
                 {
                     categories.map((cat, i) => <Col key={i}>
                         <div className='cat_img'>
                             <img src={cat.img} alt="category" />
                         </div>
-                        <h4 className="text-uppercase fw-light mt-3">{cat.title}</h4>
+                        <h4 className="text-uppercase fw-bold mt-3">{cat.title}</h4>
                         <div className='d-flex align-items-center justify-content-between fw-light'>
-                            <span>13 Products</span>
-                            <Link to="/shop" className='text-dark'>+ Shop Collections</Link>
+                            <span className='text-secondary'>13 Products</span>
+                            <Link to="/shop" className='text-secondary'>+ Shop Collections</Link>
                         </div>
                     </Col>)
                 }

@@ -44,14 +44,14 @@ const LoginRegister: React.FC = () => {
                 <Row xs={1} lg={2} className="g-3">
                     {/* login section  */}
                     <Col>
-                        <h2 className='mb-4'>Login</h2>
+                        <h2 className='mb-4 fw-bold'>Login</h2>
                         <div className='border rounded p-4'>
                             <Login></Login>
                         </div>
                     </Col>
                     {/* register section  */}
                     <Col>
-                        <h2 className='mb-4'>Register</h2>
+                        <h2 className='mb-4 fw-bold'>Register</h2>
                         <div className='border rounded p-4'>
                             {loading && <div className='my-3 text-center'>
                                 <Spinner animation="border" variant="primary" />
@@ -77,7 +77,7 @@ const LoginRegister: React.FC = () => {
                                     {errors.password && <p className='text-danger mt-2 mb-0'>Password must be a minimum 6 digit</p>}
                                 </div>
                                 <div className='text-end'>
-                                    <button type='submit' className="account_btn">Register</button>
+                                    <button type='submit' className="account_btn fw-bold">Register</button>
                                 </div>
                             </form>
                         </div>

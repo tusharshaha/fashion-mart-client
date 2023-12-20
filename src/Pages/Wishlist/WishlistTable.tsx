@@ -33,7 +33,7 @@ const WishlistTable: React.FC = () => {
                             <th>Name</th>
                             <th>Price</th>
                             <th>Stock Status</th>
-                            <th>Add To Cart</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

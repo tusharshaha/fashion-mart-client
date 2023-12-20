@@ -9,7 +9,7 @@ const ContactForm: React.FC = () => {
         <Container>
             <Row xs={1} lg={2} className="g-4 mb-5">
                 <Col data-aos="fade-right">
-                    <h3 className="mb-4">Contact Us</h3>
+                    <h3 className="mb-4 fw-bold">Contact Us</h3>
                     <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
                     <p className="py-3 mt-4 mb-0 border-top d-flex align-items-center">
                         <FaAddressCard className='me-3' />
@@ -25,7 +25,7 @@ const ContactForm: React.FC = () => {
                     </p>
                 </Col>
                 <Col data-aos="fade-left">
-                    <h3 className="mb-4">Tell Us Your Project</h3>
+                    <h3 className="mb-4 fw-bold">Tell Us Your Project</h3>
                     <form onSubmit={(e) => e.preventDefault()} className="pdts_form">
                         <div className="pdts_input">
                             <label>Your Name (required)</label>

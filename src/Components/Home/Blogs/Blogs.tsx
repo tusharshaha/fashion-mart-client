@@ -41,7 +41,7 @@ const Blogs: React.FC = () => {
                             <div>
                                 <h5>{ele.name}</h5>
                                 <p><em>By Admin</em></p>
-                                <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent</p>
+                                <p className='text-secondary'>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent</p>
                                 <p className='text-decoration-underline fw-bold mt-3'>+ READ MORE</p>
                             </div>
                         </div>

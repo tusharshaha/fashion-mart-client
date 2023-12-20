@@ -22,7 +22,7 @@ const AboutPolicy: React.FC = () => {
                         <div className="w-100">
                             <img src={ele.img} className="img-fluid w-100" alt="" />
                         </div>
-                        <h3 className="my-3">{ele.title}</h3>
+                        <h3 className="my-3 fw-bold">{ele.title}</h3>
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
                     </Col>)
                 }

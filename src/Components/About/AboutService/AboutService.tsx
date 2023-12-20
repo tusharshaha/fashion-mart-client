@@ -16,13 +16,13 @@ const AboutService: React.FC = () => {
     return (
         <div className='about_service'>
             <Container>
-                <Row xs={1} lg={3} className="g-3">
+                <Row xs={1} lg={3} className="g-4">
                     {
                         services.map((service, i) => <Col key={i}>
                             <div className="service_icon">
                                 {service.icon}
                             </div>
-                            <h4 className='my-3'>{service.title}</h4>
+                            <h4 className='my-3 fw-bold'>{service.title}</h4>
                             <p>Erat metus sodales eget dolor consectetuer, porta ut purus at et alias, nulla ornare velit amet</p>
                         </Col>)
                     }

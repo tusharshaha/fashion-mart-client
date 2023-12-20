@@ -58,7 +58,7 @@ const Login: React.FC = () => {
                             <input type="checkbox" id="rmb" />
                             <label className="hover-red ms-2" htmlFor="rmb">Remember Me</label>
                         </div>
-                        <button type='submit' className='account_btn ms-3'>Login</button>
+                        <button type='submit' className='account_btn ms-3 fw-bold'>Login</button>
                     </div>
                 </div>
             </form>

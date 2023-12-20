@@ -79,8 +79,8 @@ const ProductDetails: React.FC<props> = ({ product, showModal, setShowModal }) =
                     </div>
                 </div>
                 <div>
-                    <h5>{product?.name}</h5>
-                    <div className="my-3">
+                    <h5 className='fw-bold'>{product?.name}</h5>
+                    <div className="my-3 fw-bold">
                         <span className="me-3 text-danger">&#36;{product?.curPrice}.00</span>
                         <span><del>&#36;{product?.prevPrice}.00</del></span>
                     </div>
